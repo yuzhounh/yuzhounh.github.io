@@ -82,12 +82,32 @@
             text-decoration: underline;
         }
         .social-links a {
-            color: #0066cc;
             text-decoration: none;
             font-weight: bold;
+            color: #333333; /* 文字保持黑色 */
         }
         .social-links a:hover {
             text-decoration: underline;
+        }
+        /* Google Scholar 图标 - 蓝色 */
+        .social-links a[href*="scholar.google"] i {
+            color: #4285f4;
+        }
+        /* ORCID 图标 - 绿色 */
+        .social-links a[href*="orcid.org"] i {
+            color: #a6ce39;
+        }
+        /* XYNU 图标 - 绿色 */
+        .social-links a[href*="xynu.edu.cn"] i {
+            color: #44ab76;
+        }
+        /* GitHub 图标 - 黑色 */
+        .social-links a[href*="github.com"] i {
+            color: #333333;
+        }
+        /* Email 图标颜色 */
+        .fas.fa-envelope {
+            color: #4b6ea4;
         }
         .year-header {
             font-weight: bold;
@@ -113,14 +133,15 @@
             <p class="social-links">
                 <a href="https://scholar.google.com/citations?user=iGfueaYAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a> |
                 <a href="https://orcid.org/0000-0002-3286-073X" target="_blank"><i class="fab fa-orcid"></i> ORCID</a> |
-                <a href="https://github.com/yuzhounh" target="_blank"><i class="fab fa-github"></i> Github</a>
+                <a href="http://cit.xynu.edu.cn/info/1009/2902.htm" target="_blank"><i class="fas fa-university"></i> XYNU</a> |
+                <a href="https://github.com/yuzhounh" target="_blank"><i class="fab fa-github"></i> Github</a> 
             </p>
         </div>
 
         <section>
             <h2>Education and Work Experience</h2>
             <div class="experience-item">
-                <strong>2018/11 - Present:</strong> Lecturer, College of Computer and Information Technology, Xinyang Normal University.
+                <strong>2018/11 - Present:</strong> Lecturer, School of Computer and Information Technology, Xinyang Normal University.
             </div>
             <div class="experience-item">
                 <strong>2010/09 - 2018/06:</strong> Ph.D. in Biomedical Engineering, School of Biological Science and Medical Engineering, Southeast University.
