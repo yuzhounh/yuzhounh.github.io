@@ -52,12 +52,33 @@
         h3 {
             color: #34495e;
         }
-        .experience-item, .publication-item {
+        
+        /* Experience item styles */
+        .experience-item {
             margin-bottom: 20px;
             padding-left: 20px;
             position: relative;
         }
-        .experience-item:before, .publication-item:before {
+        .experience-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        .experience-title {
+            font-weight: bold;
+        }
+        .experience-institution {
+            color: #555;
+        }
+        
+        /* Publication item styles */
+        .publication-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .publication-item:before {
             content: "•";
             position: absolute;
             left: 0;
@@ -73,6 +94,30 @@
             font-style: italic;
             color: #777;
         }
+        
+        /* Patent item styles */
+        .patent-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .patent-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        .patent-title {
+            font-weight: bold;
+        }
+        .patent-inventors {
+            color: #555;
+        }
+        .patent-info {
+            font-style: italic;
+            color: #777;
+        }
+        
         .github-link {
             color: #0066cc;
             text-decoration: none;
@@ -84,28 +129,28 @@
         .social-links a {
             text-decoration: none;
             font-weight: bold;
-            color: #333333; /* 文字保持黑色 */
+            color: #333333; /* Keep text black */
         }
         .social-links a:hover {
             text-decoration: underline;
         }
-        /* Google Scholar 图标 - 蓝色 */
+        /* Google Scholar icon - blue */
         .social-links a[href*="scholar.google"] i {
             color: #4285f4;
         }
-        /* ORCID 图标 - 绿色 */
+        /* ORCID icon - green */
         .social-links a[href*="orcid.org"] i {
             color: #a6ce39;
         }
-        /* XYNU 图标 - 绿色 */
+        /* XYNU icon - green */
         .social-links a[href*="xynu.edu.cn"] i {
             color: #44ab76;
         }
-        /* GitHub 图标 - 黑色 */
+        /* GitHub icon - black */
         .social-links a[href*="github.com"] i {
             color: #333333;
         }
-        /* Email 图标颜色 */
+        /* Email icon color */
         .fas.fa-envelope {
             color: #4b6ea4;
         }
@@ -141,16 +186,20 @@
         <section>
             <h2>Education and Work Experience</h2>
             <div class="experience-item">
-                <strong>2018/11 - Present:</strong> Lecturer, School of Computer and Information Technology, Xinyang Normal University.
+                <div class="experience-title">2018/11 - Present: Lecturer</div>
+                <div class="experience-institution">School of Computer and Information Technology, Xinyang Normal University</div>
             </div>
             <div class="experience-item">
-                <strong>2010/09 - 2018/06:</strong> Ph.D. in Biomedical Engineering, School of Biological Science and Medical Engineering, Southeast University.
+                <div class="experience-title">2010/09 - 2018/06: Ph.D. in Biomedical Engineering</div>
+                <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
             </div>
             <div class="experience-item">
-                <strong>2012/09 - 2013/09:</strong> Visiting Student in Neuroimaging, State Key Laboratory of Cognitive Neuroscience and Learning, Beijing Normal University.
+                <div class="experience-title">2012/09 - 2013/09: Visiting Student</div>
+                <div class="experience-institution">State Key Laboratory of Cognitive Neuroscience and Learning, Beijing Normal University</div>
             </div>
             <div class="experience-item">
-                <strong>2006/09 - 2010/06:</strong> Bachelor of Science in Biomedical Engineering, School of Biological Science and Medical Engineering, Southeast University.
+                <div class="experience-title">2006/09 - 2010/06: Bachelor of Science in Biomedical Engineering</div>
+                <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
             </div>
         </section>
 
@@ -297,10 +346,31 @@
                 <a href="https://github.com/yuzhounh/2DPCAL1-S" class="github-link" target="_blank">[Code]</a>
             </div>
         </section>
+
+        <section>
+            <h2>Patents</h2>
+            
+            <div class="patent-item">
+                <div class="patent-title">一种基于鲁棒稀疏平滑主成分分析的人脸识别和重建方法及系统</div>
+                <div class="patent-inventors">Jing Wang, Xiao Xie, Li Zhang</div>
+                <div class="patent-info">Patent CN202211497782.5 (CN116052243A). (in Chinese)</div>
+            </div>
+            
+            <div class="patent-item">
+                <div class="patent-title">一种基于多层结构的冗余度机械臂多任务控制方法</div>
+                <div class="patent-inventors">Jian Li, Xinhui Zhu, Yange Sun, Li Zhang, Jing Wang</div>
+                <div class="patent-info">Patent CN202110349034.1 (CN113084803A). (in Chinese)</div>
+            </div>
+            
+            <div class="patent-item">
+                <div class="patent-title">一种基于广义表示的人脸图像分类方法</div>
+                <div class="patent-inventors">Jing Wang, Bao Zhang, Jian Li, Hejun Xuan, Yange Sun, Huaping Guo</div>
+                <div class="patent-info">Patent CN202010689694.X (CN111931595A). (in Chinese)</div>
+            </div>
+        </section>
         
         <div class="footer">
             &copy; 2025 Jing Wang. All rights reserved.<br>
-            Last updated: September 2025
         </div>
     </div>
 </body>
