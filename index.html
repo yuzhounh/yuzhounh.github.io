@@ -53,6 +53,27 @@
             color: #34495e;
         }
         
+        /* Profile section with image */
+        .section {
+            position: relative;
+        }
+        .profile-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 214px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h1 {
+            padding-right: 170px;
+        }
+        .section p {
+            padding-right: 170px;
+        }
+        
         /* Experience item styles */
         .experience-item {
             margin-bottom: 20px;
@@ -172,6 +193,7 @@
 <body>
     <div class="container">
         <div class="section">
+            <img src="JingWang.jpg" alt="Jing Wang" class="profile-image">
             <h1>Jing Wang</h1>
             <p><strong>Research Interests:</strong> Neuroimaging, Machine Learning, Artificial Intelligence</p>
             <p><strong><i class="fas fa-envelope"></i> Email:</strong> wangjing@xynu.edu.cn</p>
