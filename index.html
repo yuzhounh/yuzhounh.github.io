@@ -230,6 +230,7 @@
         }
         .tab-link i {
             margin-right: 6px;
+            vertical-align: middle;
         }
         .tab-content {
             display: none;
@@ -267,6 +268,307 @@
         .resource-link:hover {
             text-decoration: underline;
         }
+        
+        /* 学生页面样式 */
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .student-item {
+            text-align: center;
+        }
+        
+        .student-item img {
+            width: 120px;
+            height: 174px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .student-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .student-period {
+            margin-bottom: 5px;
+        }
+        
+        .student-email {
+            font-size: 0.9em;
+        }
+        
+        /* 响应式设计 - 移动端优化 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin: 0;
+                box-shadow: none;
+            }
+            
+            /* 标题调整 */
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            /* 个人资料区域移动端布局 */
+            .section {
+                position: relative;
+            }
+            
+            .profile-image {
+                position: static;
+                width: 100px;
+                height: 145px;
+                margin: 0 auto 15px auto;
+                display: block;
+            }
+            
+            .section h1 {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .section p {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            /* 社交链接移动端布局 */
+            .social-links {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 8px !important;
+                margin-top: 15px;
+            }
+            
+            .social-links a {
+                font-size: 0.9em;
+                padding: 8px;
+                text-align: center;
+                background: #f8f9fa;
+                border-radius: 4px;
+            }
+            
+        /* 汉堡菜单样式 */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        /* 移动端汉堡菜单显示 */
+        .hamburger {
+            display: flex;
+        }
+        
+        /* 导航标签移动端优化 */
+        .tabs {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        
+        .tabs.active {
+            display: flex;
+        }
+        
+        .tab-link {
+            width: 100%;
+            padding: 12px 8px;
+            font-size: 0.9em;
+            text-align: left;
+            border-radius: 4px;
+        }
+        
+        .tab-link i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+            
+            /* 学生页面移动端布局 */
+            .students-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+            
+            .student-item {
+                text-align: center;
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: 8px;
+            }
+            
+            .student-item img {
+                width: 80px !important;
+                height: 116px !important;
+                margin-bottom: 8px;
+            }
+            
+            .student-item div {
+                font-size: 0.9em;
+                margin-bottom: 4px;
+            }
+            
+            /* 资源页面移动端布局 */
+            .resource-item {
+                display: block !important;
+                padding: 15px 0;
+                text-align: center;
+            }
+            
+            .resource-item img {
+                width: 120px !important;
+                height: auto;
+                margin: 0 auto 10px auto;
+                display: block;
+            }
+            
+            .resource-title {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+            
+            .resource-subtitle {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+            
+            .resource-link {
+                font-size: 0.8em;
+                word-break: break-all;
+                display: block;
+                margin-top: 8px;
+            }
+            
+            /* 出版物列表移动端优化 */
+            .publication-item {
+                padding-left: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .publication-title {
+                font-size: 0.95em;
+                line-height: 1.4;
+            }
+            
+            .publication-authors {
+                font-size: 0.9em;
+            }
+            
+            .publication-venue {
+                font-size: 0.85em;
+            }
+            
+            /* 经验项目移动端优化 */
+            .experience-item {
+                padding-left: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .experience-title {
+                font-size: 0.95em;
+            }
+            
+            .experience-institution {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* 超小屏幕优化 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            /* 学生页面单列布局 */
+            .students-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            
+            .student-item img {
+                width: 100px !important;
+                height: 145px !important;
+            }
+            
+            /* 超小屏幕汉堡菜单优化 */
+            .hamburger {
+                padding: 6px;
+            }
+            
+            .hamburger span {
+                width: 20px;
+                height: 2px;
+            }
+            
+            .tab-link {
+                padding: 10px 8px;
+                font-size: 0.85em;
+            }
+            
+            .tab-link i {
+                margin-right: 6px;
+                width: 14px;
+            }
+            
+            /* 社交链接单列 */
+            .social-links {
+                grid-template-columns: 1fr !important;
+                gap: 6px !important;
+            }
+            
+            /* 资源项目优化 */
+            .resource-item img {
+                width: 100px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -275,7 +577,13 @@
             <h1>Jing Wang</h1>
         </div>
 
-        <div class="tabs">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="tabs" id="tabs">
             <div class="tab-link active" data-tab="home"><i class="fas fa-home"></i> Home</div>
             <div class="tab-link" data-tab="publication"><i class="fas fa-file-alt"></i> Publications</div>
             <div class="tab-link" data-tab="students"><i class="fas fa-user-graduate"></i> Students</div>
@@ -496,36 +804,36 @@
         <div id="tab-students" class="tab-content">
             <section>
                 <h2>Students</h2>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px;">
-                    <div style="text-align: center;">
-                        <img src="Photos/XiaKunpeng.jpg" alt="Kunpeng Xia" style="width: 120px; height: 174px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Kunpeng Xia</div>
-                        <div style="margin-bottom: 5px;">2025/09 - Present</div>
-                        <div>Email: <a href="mailto:2028479882@qq.com">2028479882@qq.com</a></div>
+                <div class="students-grid">
+                    <div class="student-item">
+                        <img src="Photos/XiaKunpeng.jpg" alt="Kunpeng Xia">
+                        <div class="student-name">Kunpeng Xia</div>
+                        <div class="student-period">2025/09 - Present</div>
+                        <div class="student-email">Email: <a href="mailto:2028479882@qq.com">2028479882@qq.com</a></div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Photos/ChenYanfang.jpg" alt="Yanfang Chen" style="width: 120px; height: 174px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Yanfang Chen</div>
-                        <div style="margin-bottom: 5px;">2024/09 - Present</div>
-                        <div>Email: <a href="mailto:chenyanfang@xynu.edu.cn">chenyanfang@xynu.edu.cn</a></div>
+                    <div class="student-item">
+                        <img src="Photos/ChenYanfang.jpg" alt="Yanfang Chen">
+                        <div class="student-name">Yanfang Chen</div>
+                        <div class="student-period">2024/09 - Present</div>
+                        <div class="student-email">Email: <a href="mailto:chenyanfang@xynu.edu.cn">chenyanfang@xynu.edu.cn</a></div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Photos/HuHang.jpg" alt="Hang Hu" style="width: 120px; height: 174px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Hang Hu</div>
-                        <div style="margin-bottom: 5px;">2024/09 - Present</div>
-                        <div>Email: <a href="mailto:huhang@xynu.edu.cn">huhang@xynu.edu.cn</a></div>
+                    <div class="student-item">
+                        <img src="Photos/HuHang.jpg" alt="Hang Hu">
+                        <div class="student-name">Hang Hu</div>
+                        <div class="student-period">2024/09 - Present</div>
+                        <div class="student-email">Email: <a href="mailto:huhang@xynu.edu.cn">huhang@xynu.edu.cn</a></div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Photos/WangPengwei.jpg" alt="Pengwei Wang" style="width: 120px; height: 174px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Pengwei Wang</div>
-                        <div style="margin-bottom: 5px;">2023/09 - Present</div>
-                        <div>Email: <a href="mailto:wangpw@xynu.edu.cn">wangpw@xynu.edu.cn</a></div>
+                    <div class="student-item">
+                        <img src="Photos/WangPengwei.jpg" alt="Pengwei Wang">
+                        <div class="student-name">Pengwei Wang</div>
+                        <div class="student-period">2023/09 - Present</div>
+                        <div class="student-email">Email: <a href="mailto:wangpw@xynu.edu.cn">wangpw@xynu.edu.cn</a></div>
                     </div>
-                    <div style="text-align: center;">
-                        <img src="Photos/ZhangBao.jpg" alt="Bao Zhang" style="width: 120px; height: 174px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Bao Zhang</div>
-                        <div style="margin-bottom: 5px;">2019/09 - 2022.06</div>
-                        <div>Email: <a href="mailto:1418988908@qq.com">1418988908@qq.com</a></div>
+                    <div class="student-item">
+                        <img src="Photos/ZhangBao.jpg" alt="Bao Zhang">
+                        <div class="student-name">Bao Zhang</div>
+                        <div class="student-period">2019/09 - 2022.06</div>
+                        <div class="student-email">Email: <a href="mailto:1418988908@qq.com">1418988908@qq.com</a></div>
                     </div>
                 </div>
             </section>
@@ -556,20 +864,48 @@
         <script>
         (function() {
             var links = document.querySelectorAll('.tab-link');
+            var hamburger = document.getElementById('hamburger');
+            var tabs = document.getElementById('tabs');
+            
             function activate(tabName) {
                 links.forEach(function(l) { l.classList.toggle('active', l.getAttribute('data-tab') === tabName); });
                 document.querySelectorAll('.tab-content').forEach(function(c) {
                     c.classList.toggle('active', c.id === 'tab-' + tabName);
                 });
             }
+            
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                tabs.classList.toggle('active');
+            }
+            
             links.forEach(function(link) {
                 link.addEventListener('click', function() {
                     activate(this.getAttribute('data-tab'));
                     if (history && history.replaceState) {
                         history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
                     }
+                    // 在移动端点击菜单项后关闭菜单
+                    if (window.innerWidth <= 768) {
+                        hamburger.classList.remove('active');
+                        tabs.classList.remove('active');
+                    }
                 });
             });
+            
+            // 汉堡菜单点击事件
+            if (hamburger) {
+                hamburger.addEventListener('click', toggleMenu);
+            }
+            
+            // 窗口大小改变时重置菜单状态
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    hamburger.classList.remove('active');
+                    tabs.classList.remove('active');
+                }
+            });
+            
             // Deep link support
             var hash = (location.hash || '').replace('#', '');
             if (hash && document.querySelector('.tab-link[data-tab="' + hash + '"]')) {
@@ -585,4 +921,5 @@
         </div>
     </div>
 </body>
+</html>
 </html>
