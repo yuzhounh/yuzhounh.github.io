@@ -1,9 +1,10 @@
 # Jing Wang - Academic Homepage
 
-This is the academic homepage of Jing Wang: https://yuzhounh.github.io/. 
+This is the academic homepage of Jing Wang: https://yuzhounh.github.io/.
 
-The homepage includes:
+The homepage includes four tabs:
 
-- **Education and Work Experience**: Academic background and career history
+- **Home**: Basic information, research interests, education and work experience
 - **Publications**: A comprehensive list of research publications
-- **Patents**: Chinese patents
+- **Students**: Student mentoring and supervision information
+- **Resources**: Shared academic resources and materials
