@@ -4,1044 +4,936 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jing Wang - Academic Homepage</title>
+    <meta name="description" content="Academic homepage of Jing Wang — Associate Professor at Xinyang Normal University. Research in Parkinson's Disease, Neuroimaging, and Machine Learning.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --color-bg: #f4f6f9;
+            --color-surface: #ffffff;
+            --color-text: #1a1f36;
+            --color-text-muted: #5c6370;
+            --color-text-light: #8891a0;
+            --color-accent: #2563eb;
+            --color-accent-hover: #1d4ed8;
+            --color-accent-soft: #eff6ff;
+            --color-border: #e5e7eb;
+            --color-border-light: #f0f2f5;
+            --color-item-bg: #fafbfc;
+            --color-item-border: #eef1f5;
+            --color-item-hover: #f5f8ff;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: 0.2s ease;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.65;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--color-text);
+            background:
+                radial-gradient(ellipse 80% 60% at 10% -10%, rgba(37, 99, 235, 0.08), transparent),
+                radial-gradient(ellipse 60% 50% at 90% 0%, rgba(99, 102, 241, 0.06), transparent),
+                var(--color-bg);
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 1000px;
+
+        .page-wrapper {
+            max-width: 920px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 24px 20px 40px;
         }
-        header {
-            text-align: center;
-            padding: 30px 0;
-            border-bottom: 1px solid #eee;
+
+        .container {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .contact-info {
-            margin: 20px 0;
-        }
-        .contact-info a {
-            color: #0066cc;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        section {
-            margin: 30px 0;
-        }
-        h2 {
-            font-size: 1.5em;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-        h3 {
-            color: #34495e;
-        }
-        
-        /* Profile section with image */
-        .section {
-            position: relative;
-        }
-        .profile-image {
-            position: absolute;
-            top: -10px;
-            right: 0;
-            width: 120px;
-            height: 174px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .section h1 {
-            padding-right: 170px;
-        }
-        .section p {
-            padding-right: 170px;
-        }
-        
-        /* Experience item styles */
-        .experience-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .experience-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-        .experience-title {
-            font-weight: bold;
-        }
-        .experience-institution {
-            color: #555;
-        }
-        
-        /* Publication item styles */
-        .publication-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .publication-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-        .publication-title {
-            font-weight: bold;
-        }
-        
-        .publication-title a {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .publication-title a:hover {
-            color: #0066cc;
-            text-decoration: underline;
-        }
-        
-        .patent-title a {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .patent-title a:hover {
-            color: #0066cc;
-            text-decoration: underline;
-        }
-        .publication-authors {
-            color: #555;
-        }
-        .publication-venue {
-            font-style: italic;
-            color: #777;
-        }
-        
-        /* Patent item styles */
-        .patent-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .patent-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #3498db;
-        }
-        .patent-title {
-            font-weight: bold;
-        }
-        .patent-inventors {
-            color: #555;
-        }
-        .patent-info {
-            font-style: italic;
-            color: #777;
-        }
-        
-        .resource-link-inline {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 0.9em;
-        }
-        .resource-link-inline:hover {
-            text-decoration: underline;
-        }
-        .social-links a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #333333; /* Keep text black */
-        }
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-        /* Google Scholar icon - blue */
-        .social-links a[href*="scholar.google"] i {
-            color: #4285f4;
-        }
-        /* ORCID icon - green */
-        .social-links a[href*="orcid.org"] i {
-            color: #a6ce39;
-        }
-        /* XYNU icon - green */
-        .social-links a[href*="xynu.edu.cn"] i {
-            color: #44ab76;
-        }
-        /* GitHub icon - black */
-        .social-links a[href*="github.com"] i {
-            color: #333333;
-        }
-        /* Email icon color */
-        .fas.fa-envelope {
-            color: #4b6ea4;
-        }
-        .year-header {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-        /* Main header */
+
+        /* Header */
         .main-header {
-            padding: 20px 0;
+            padding: 28px 32px 0;
             display: flex;
             align-items: center;
-            position: relative;
-        }
-        .main-header h1 {
-            font-size: 1.8em;
-            margin: 0;
-            text-align: left;
-            flex: 1;
-        }
-        /* Tabs - 桌面端显示 */
-        .tabs {
-            display: flex;
-            gap: 2px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            background-color: transparent;
-            padding: 4px;
-            border-radius: 8px;
-        }
-        
-        .tabs.active {
-            display: flex;
-        }
-        .tab-link {
-            flex: 1;
-            padding: 12px 20px;
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            border-radius: 6px;
-            color: #555;
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .tab-link:hover {
-            background: #f0f0f0;
-        }
-        .tab-link.active {
-            background: #f0f0f0;
-            color: #2c3e50;
-            font-weight: 600;
-            box-shadow: none;
-        }
-        .tab-link i {
-            margin-right: 6px;
-            vertical-align: middle;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        /* Resources */
-        .resource-item {
-            display: grid;
-            grid-template-columns: 160px 1fr;
             gap: 16px;
-            align-items: start;
-            padding: 14px 0;
-            border-bottom: 1px solid #f0f0f0;
         }
-        .resource-item img {
-            width: 160px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+
+        .header-text {
+            flex: 1;
         }
-        .resource-title {
-            font-weight: bold;
-            margin-bottom: 6px;
+
+        .main-header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
         }
-        .resource-subtitle {
-            color: #555;
-            margin-bottom: 6px;
+
+        .header-subtitle {
+            margin: 4px 0 0;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
         }
-        .resource-link {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .resource-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* 学生页面样式 */
-        .students-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .student-item {
-            text-align: center;
-        }
-        
-        .student-item img {
-            width: 120px;
-            height: 174px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        
-        .student-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .student-period {
-            margin-bottom: 5px;
-        }
-        
-        .student-email {
-            font-size: 0.9em;
-        }
-        
-        /* 响应式设计 - 移动端优化 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-                margin: 0;
-                box-shadow: none;
-            }
-            
-            /* 标题调整 */
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            h2 {
-                font-size: 1.2em;
-            }
-            
-            /* 主标题移动端布局 */
-            .main-header {
-                flex-direction: row;
-                align-items: center;
-            }
-            
-            .main-header h1 {
-                font-size: 1.5em;
-            }
-            
-            /* 移动端显示汉堡菜单 */
-            .hamburger {
-                display: flex;
-            }
-            
-            /* 移动端隐藏正常菜单，显示弹出菜单 */
-            .tabs {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                gap: 4px;
-                background: #fff;
-                border-radius: 8px;
-                padding: 15px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                border: 1px solid #e0e0e0;
-                z-index: 1000;
-            }
-            
-            .tabs.active {
-                display: flex;
-            }
-            
-            /* 个人资料区域移动端布局 */
-            .section {
-                position: relative;
-            }
-            
-            .profile-image {
-                position: static;
-                width: 100px;
-                height: 145px;
-                margin: 0 auto 15px auto;
-                display: block;
-            }
-            
-            .section h1 {
-                padding-right: 0;
-                text-align: center;
-            }
-            
-            .section p {
-                padding-right: 0;
-                text-align: center;
-            }
-            
-            /* 社交链接移动端布局 */
-            .social-links {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 8px !important;
-                margin-top: 15px;
-            }
-            
-            .social-links a {
-                font-size: 0.9em;
-                padding: 8px;
-                text-align: center;
-                background: #f8f9fa;
-                border-radius: 4px;
-            }
-            
-        /* 汉堡菜单样式 - 桌面端隐藏 */
+
         .hamburger {
             display: none;
             flex-direction: column;
+            justify-content: center;
             cursor: pointer;
-            padding: 8px;
-            background: #f0f0f0;
-            border-radius: 6px;
-            margin-right: 15px;
-            transition: all 0.3s ease;
+            padding: 10px;
+            background: var(--color-accent-soft);
+            border: none;
+            border-radius: var(--radius-sm);
+            transition: background var(--transition);
         }
-        
+
+        .hamburger:hover {
+            background: #dbeafe;
+        }
+
         .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--color-text);
             margin: 3px 0;
             transition: 0.3s;
+            border-radius: 2px;
         }
-        
+
         .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-4px, 5px);
         }
-        
+
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
-        
+
         .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-4px, -5px);
         }
-        
-        
-        /* 移动端标签链接优化 */
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin: 24px 32px 0;
+            padding: 4px;
+            background: var(--color-border-light);
+            border-radius: var(--radius-md);
+        }
+
         .tab-link {
-            width: 100%;
-            font-size: 0.9em;
-            padding: 12px 8px;
-            text-align: left;
-        }
-        
-        .tab-link i {
-            margin-right: 8px;
-            width: 16px;
+            flex: 1;
+            padding: 10px 16px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-sm);
+            color: var(--color-text-muted);
+            font-weight: 500;
+            font-size: 0.9rem;
             text-align: center;
+            transition: all var(--transition);
+            font-family: inherit;
         }
-            
-            /* 学生页面移动端布局 */
-            .students-grid {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 20px !important;
-            }
-            
-            .student-item {
-                text-align: center;
-                padding: 10px;
-                background: #f8f9fa;
-                border-radius: 8px;
-            }
-            
-            .student-item img {
-                width: 80px !important;
-                height: 116px !important;
-                margin-bottom: 8px;
-            }
-            
-            .student-item div {
-                font-size: 0.9em;
-                margin-bottom: 4px;
-            }
-            
-            /* 资源页面移动端布局 */
-            .resource-item {
-                display: block !important;
-                padding: 15px 0;
-                text-align: center;
-            }
-            
-            .resource-item img {
-                width: 180px !important;
-                height: auto;
-                margin: 0 auto 10px auto;
-                display: block;
-            }
-            
-            .resource-title {
-                font-size: 1.1em;
-                margin-bottom: 8px;
-            }
-            
-            .resource-subtitle {
-                font-size: 0.9em;
-                margin-bottom: 8px;
-            }
-            
-            .resource-link {
-                font-size: 0.8em;
-                word-break: break-all;
-                display: block;
-                margin-top: 8px;
-            }
-            
-            /* 出版物列表移动端优化 */
-            .publication-item {
-                padding-left: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .publication-title {
-                font-size: 0.95em;
-                line-height: 1.4;
-            }
-            
-            .publication-authors {
-                font-size: 0.9em;
-            }
-            
-            .publication-venue {
-                font-size: 0.85em;
-            }
-            
-            /* 专利项目移动端优化 */
-            .patent-item {
-                padding-left: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .patent-title {
-                font-size: 0.95em;
-                line-height: 1.4;
-            }
-            
-            .patent-inventors {
-                font-size: 0.9em;
-            }
-            
-            .patent-info {
-                font-size: 0.85em;
-            }
-            
-            /* 经验项目移动端优化 */
-            .experience-item {
-                padding-left: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .experience-title {
-                font-size: 0.95em;
-            }
-            
-            .experience-institution {
-                font-size: 0.9em;
-            }
-            
-            /* 资源链接移动端优化 */
-            .resource-link-inline {
-                font-size: 0.8em;
-            }
+
+        .tab-link:hover {
+            color: var(--color-text);
+            background: rgba(255, 255, 255, 0.6);
         }
-        
-        /* 超小屏幕优化 */
-        @media (max-width: 480px) {
-            .container {
-                padding: 5px;
+
+        .tab-link.active {
+            background: var(--color-surface);
+            color: var(--color-accent);
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tab-link i {
+            margin-right: 6px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 28px 32px 32px;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.25s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 36px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 0 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-accent);
+            letter-spacing: -0.01em;
+        }
+
+        /* Profile */
+        .profile-info p {
+            margin: 0 0 10px;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .profile-info p strong {
+            color: var(--color-text);
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: var(--color-item-bg);
+            border: 1px solid var(--color-item-border);
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            transition: all var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--color-item-hover);
+            border-color: #dbeafe;
+            color: var(--color-accent);
+        }
+
+        .social-links a[href*="scholar.google"] i { color: #4285f4; }
+        .social-links a[href*="orcid.org"] i { color: #a6ce39; }
+        .social-links a[href*="xynu.edu.cn"] i { color: #44ab76; }
+        .social-links a[href*="github.com"] i { color: #24292f; }
+        .fas.fa-envelope { color: #4b6ea4; }
+
+        /* Experience timeline */
+        .experience-item {
+            position: relative;
+            padding: 0 0 20px 24px;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .experience-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            border: 2px solid var(--color-surface);
+        }
+
+        .experience-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            margin-bottom: 2px;
+        }
+
+        .experience-institution {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Students list */
+        .students-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .student-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            background: var(--color-item-bg);
+            border: 1px solid var(--color-item-border);
+            border-radius: var(--radius-sm);
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .student-card:hover {
+            background: var(--color-item-hover);
+            border-color: #dbeafe;
+        }
+
+        .student-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .student-period {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            white-space: nowrap;
+        }
+
+        /* Publications */
+        .year-header {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 24px 0 12px;
+        }
+
+        .year-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .publication-item,
+        .patent-item {
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            background: var(--color-item-bg);
+            border: 1px solid var(--color-item-border);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid transparent;
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .publication-item:hover,
+        .patent-item:hover {
+            border-color: #dbeafe;
+            border-left-color: var(--color-accent);
+            background: var(--color-item-hover);
+        }
+
+        .publication-title,
+        .patent-title {
+            font-weight: 600;
+            font-size: 0.93rem;
+            line-height: 1.45;
+            margin-bottom: 4px;
+        }
+
+        .publication-title a,
+        .patent-title a {
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .publication-title a:hover,
+        .patent-title a:hover {
+            color: var(--color-accent);
+        }
+
+        .publication-authors,
+        .patent-inventors {
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 2px;
+        }
+
+        .publication-venue,
+        .patent-info {
+            font-style: italic;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        .resource-link-inline {
+            display: inline-block;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.78rem;
+            margin: 4px 6px 0 0;
+            padding: 3px 10px;
+            background: var(--color-surface);
+            border: 1px solid #dbeafe;
+            border-radius: 999px;
+            transition: all var(--transition);
+        }
+
+        .resource-link-inline:hover {
+            background: var(--color-accent-soft);
+            border-color: var(--color-accent);
+        }
+
+        /* Vibes */
+        .vibe-item {
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            background: var(--color-item-bg);
+            border: 1px solid var(--color-item-border);
+            border-radius: var(--radius-md);
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .vibe-item:hover {
+            background: var(--color-item-hover);
+            border-color: #dbeafe;
+        }
+
+        .vibe-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .vibe-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+
+        .vibe-subtitle {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .vibe-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            word-break: break-all;
+            transition: color var(--transition);
+        }
+
+        .vibe-link:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .vibe-link i {
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 32px;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            border-top: 1px solid var(--color-border);
+            background: var(--color-border-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: 12px 12px 24px;
             }
-            
-            h1 {
-                font-size: 1.5em;
+
+            .main-header {
+                padding: 20px 20px 0;
             }
-            
-            h2 {
-                font-size: 1.1em;
+
+            .main-header h1 {
+                font-size: 1.4rem;
             }
-            
-            /* 学生页面单列布局 */
-            .students-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+
+            .header-subtitle {
+                font-size: 0.82rem;
             }
-            
-            .student-item img {
-                width: 100px !important;
-                height: 145px !important;
-            }
-            
-            /* 超小屏幕汉堡菜单优化 */
+
             .hamburger {
-                padding: 6px;
+                display: flex;
             }
-            
-            .hamburger span {
-                width: 20px;
-                height: 2px;
+
+            .tabs {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 12px;
+                right: 12px;
+                flex-direction: column;
+                margin: 0;
+                padding: 8px;
+                background: var(--color-surface);
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-lg);
+                border: 1px solid var(--color-border);
+                z-index: 1000;
             }
-            
+
+            .tabs.active {
+                display: flex;
+            }
+
+            .container {
+                position: relative;
+            }
+
             .tab-link {
-                padding: 10px 8px;
-                font-size: 0.85em;
+                text-align: left;
+                padding: 12px 16px;
             }
-            
-            .tab-link i {
-                margin-right: 6px;
-                width: 14px;
+
+            .tab-content {
+                padding: 20px;
             }
-            
-            /* 社交链接单列 */
+
             .social-links {
-                grid-template-columns: 1fr !important;
-                gap: 6px !important;
+                justify-content: center;
             }
-            
-            /* 资源项目优化 */
-            .resource-item img {
-                width: 150px !important;
+
+            .students-list {
+                grid-template-columns: 1fr;
+            }
+
+            .student-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .publication-item,
+            .patent-item {
+                padding: 12px 14px;
+            }
+
+            .publication-title,
+            .patent-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-wrapper {
+                padding: 8px 8px 20px;
+            }
+
+            .main-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .social-links a {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="main-header">
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="main-header">
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="header-text">
+                    <h1>Jing Wang</h1>
+                    <p class="header-subtitle">Associate Professor · Xinyang Normal University</p>
+                </div>
             </div>
-            <h1>Jing Wang</h1>
-        </div>
-        
-        <div class="tabs" id="tabs">
-            <div class="tab-link active" data-tab="home"><i class="fas fa-home"></i> Home</div>
-            <div class="tab-link" data-tab="publication"><i class="fas fa-file-alt"></i> Publications</div>
-            <div class="tab-link" data-tab="students"><i class="fas fa-user-graduate"></i> Students</div>
-            <div class="tab-link" data-tab="resources"><i class="fas fa-folder-open"></i> Resources</div>
-        </div>
 
-        <div id="tab-home" class="tab-content active">
-            <section>
-                <h2>Basic Information</h2>
-                <div class="section">
-                    <img src="Photos/WangJing.jpg" alt="Jing Wang" class="profile-image">
-                    <p><strong>Research Interests:</strong> Parkinson's Disease, Neuroimaging, Machine Learning</p>
-                    <p><strong><i class="fas fa-envelope"></i> Email:</strong> wangjing@xynu.edu.cn</p>
-                    <div class="social-links" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
-                        <a href="http://cit.xynu.edu.cn/info/1009/2902.htm" target="_blank"><i class="fas fa-university"></i> XYNU</a>
-                        <a href="https://orcid.org/0000-0002-3286-073X" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
-                        <a href="https://github.com/yuzhounh" target="_blank"><i class="fab fa-github"></i> Github</a>
-                        <a href="https://scholar.google.com/citations?user=iGfueaYAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                    </div>
-                </div>
-            </section>
+            <div class="tabs" id="tabs">
+                <div class="tab-link active" data-tab="home"><i class="fas fa-home"></i> Home</div>
+                <div class="tab-link" data-tab="publication"><i class="fas fa-file-alt"></i> Publications</div>
+                <div class="tab-link" data-tab="vibes"><i class="fas fa-bolt"></i> Vibes</div>
+            </div>
 
-            <section>
-                <h2>Education and Work Experience</h2>
-                <div class="experience-item">
-                    <div class="experience-title">2025/12 - Present: Associate Professor</div>
-                    <div class="experience-institution">School of Computer and Information Technology, Xinyang Normal University</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-title">2018/11 - 2025/12: Lecturer</div>
-                    <div class="experience-institution">School of Computer and Information Technology, Xinyang Normal University</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-title">2010/09 - 2018/06: Ph.D. in Biomedical Engineering</div>
-                    <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-title">2012/09 - 2013/09: Visiting Student</div>
-                    <div class="experience-institution">State Key Laboratory of Cognitive Neuroscience and Learning, Beijing Normal University</div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-title">2006/09 - 2010/06: B.S. in Biomedical Engineering</div>
-                    <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
-                </div>
-            </section>
-        </div>
+            <div id="tab-home" class="tab-content active">
+                <section>
+                    <h2>Basic Information</h2>
+                    <div class="profile-info">
+                            <p><strong>Research Interests:</strong> Parkinson's Disease, Neuroimaging, Machine Learning</p>
+                            <p><strong><i class="fas fa-envelope"></i> Email:</strong> wangjing@xynu.edu.cn</p>
+                            <div class="social-links">
+                                <a href="http://cit.xynu.edu.cn/info/1009/2902.htm" target="_blank"><i class="fas fa-university"></i> XYNU</a>
+                                <a href="https://orcid.org/0000-0002-3286-073X" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+                                <a href="https://github.com/yuzhounh" target="_blank"><i class="fab fa-github"></i> Github</a>
+                                <a href="https://scholar.google.com/citations?user=iGfueaYAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                            </div>
+                    </div>
+                </section>
 
-        <div id="tab-publication" class="tab-content">
-            <section>
-                <h2>Publications</h2>
-                
-                <div class="year-header">2025</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/full" target="_blank">Diagnostic classification of mild cognitive impairment in Parkinson's disease using subject-level stratified machine-learning analysis</a></div>
-                    <div class="publication-authors">Jing Wang, Yanfang Chen, Xiao Xie, Pengwei Wang, Hang Hu, Hongfang Han, Lihan Wang, Li Zhang</div>
-                    <div class="publication-venue">Frontiers in Aging Neuroscience 17 (2025): 1687925</div>
-                    <a href="https://github.com/yuzhounh/PD-MCI-Classification" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://public-pages-files-2025.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                    <a href="https://www.frontiersin.org/api/v4/articles/1687925/file/Data_Sheet_1.pdf/1687925_data-sheet_1/1" class="resource-link-inline" target="_blank">[Supplementary materials]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.2097-583X.2025.03.007" target="_blank">基于贝叶斯优化的支持向量回归预测帕金森病严重程度研究</a></div>
-                    <div class="publication-authors">Jing Wang, Pengwei Wang, Xiao Xie, Hongfang Han</div>
-                    <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 38, no. 3 (2025): 297-303. (in Chinese)</div>
-                    <a href="https://github.com/yuzhounh/PD-regression-82subs" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.2097-583X.2025.03.007.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.mdpi.com/2073-8994/17/2/151" target="_blank">Incorporating symmetric smooth regularizations into sparse logistic regression for classification and feature extraction</a></div>
-                    <div class="publication-authors">Jing Wang, Xiao Xie, Pengwei Wang, Jian Sun, Yaochen Liu, Li Zhang</div>
-                    <div class="publication-venue">Symmetry 17, no. 2 (2025): 151</div>
-                    <a href="https://github.com/yuzhounh/LR-SS" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://mdpi-res.com/d_attachment/symmetry/symmetry-17-00151/article_deploy/symmetry-17-00151-v2.pdf?version=1737510233" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323281" target="_blank">Robust sparse smooth principal component analysis for face reconstruction and recognition</a></div>
-                    <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Jian Li, Hao Cai, Yan Feng</div>
-                    <div class="publication-venue">PLoS One 20, no. 5 (2025): e0323281</div>
-                    <a href="https://github.com/yuzhounh/RSSPCA" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0323281&type=printable" class="resource-link-inline" target="_blank">[PDF]</a>
-                    <a href="https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0323281.s001" class="resource-link-inline" target="_blank">[Supplementary materials]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.liebertpub.com/doi/abs/10.1089/brain.2024.0032" target="_blank">Frontal Cortex Acts as Causality Transition Hub from Mirror Network to Mentalizing Network During Action Intention Understanding</a></div>
-                    <div class="publication-authors">Li Zhang, Lei Zhang, Jing Wang, Yanmei Zhu</div>
-                    <div class="publication-venue">Brain Connectivity 15, no. 1 (2025): 3-18</div>
-                    <a href="PDF/zhang2024frontal.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2024</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" target="_blank">Generalized Representation-based Classification by Lp-norm for Face Recognition</a></div>
-                    <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Xusheng Chen, Hongzhou Yue, Huaping Guo</div>
-                    <div class="publication-venue">IAENG International Journal of Computer Science 51, no. 2 (2024): 104-114</div>
-                    <a href="https://github.com/yuzhounh/GRC" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2022</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/24/12913" target="_blank">Fusion of bilateral 2DPCA information for image reconstruction and recognition</a></div>
-                    <div class="publication-authors">Jing Wang, Mengli Zhao, Xiao Xie, Li Zhang, Wenbo Zhu</div>
-                    <div class="publication-venue">Applied Sciences 12, no. 24 (2022): 12913</div>
-                    <a href="https://github.com/yuzhounh/DB2DPCA" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://mdpi-res.com/d_attachment/applsci/applsci-12-12913/article_deploy/applsci-12-12913-v2.pdf?version=1671519093" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/23/11967" target="_blank">A nested u-shaped residual codec network for strip steel defect detection</a></div>
-                    <div class="publication-authors">Huaping Guo, Shanggui Zhan, Li Zhang, Wenbo Zhu, Yange Sun, Jing Wang</div>
-                    <div class="publication-venue">Applied Sciences 12, no. 23 (2022): 11967</div>
-                    <a href="https://mdpi-res.com/d_attachment/applsci/applsci-12-11967/article_deploy/applsci-12-11967.pdf?version=1669208575" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-1642-9_30" target="_blank">Causal Connectivity Transition from Action Observation to Mentalizing Network for Understanding Other's Action Intention</a></div>
-                    <div class="publication-authors">Li Zhang, Jing Wang, Yanmei Zhu</div>
-                    <div class="publication-venue">In International Conference on Neural Information Processing 1792, pp. 350-360. Singapore: Springer Nature Singapore, 2022</div>
-                    <a href="PDF/zhang2023causal.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2022.03.024" target="_blank">基于广义稀疏逻辑回归的全脑分类</a></div>
-                    <div class="publication-authors">Jing Wang, Bao Zhang, Xiao Xie, Jian Li, Li Zhang, Huaping Guo</div>
-                    <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 35, no. 3 (2022): 488-493. (in Chinese)</div>
-                    <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2022.03.024.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0JLxj7LQJ-QOAahlFpQDnSnlJkDPEDQJLWH1blMIwUtRXMWQt-A5dRfyFnzUT3gyTKR5jVjyxw4Ne0-ZLEiYHXb_aKeWQipXucooThLB1HvYeG5-VhEz8t6NbwABxyrJTOQWNrpMCl57Dom-Byf14IR5pEfNx39nnx4Vem3CGb_ng==&uniplatform=NZKPT&language=CHS" target="_blank">新工科背景下人工智能课程的教学改革</a></div>
-                    <div class="publication-authors">Yan Feng, Lei You, Jian Li, Jing Wang</div>
-                    <div class="publication-venue">Fujian Computer 38, no. 4 (2022): 118-120. (in Chinese)</div>
-                    <a href="PDF/feng2022new.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2021</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/9642176" target="_blank">Robot manipulator control via solving four-layered time-variant equations including linear, nonlinear equalities and inequalities</a></div>
-                    <div class="publication-authors">Xinhui Zhu, Li Zhang, Yang Shi, Jing Wang, Jian Li</div>
-                    <div class="publication-venue">In International Conference on Intelligent Control and Information Processing (ICICIP), pp. 416-421. IEEE, 2021</div>
-                    <a href="PDF/zhu2021robot.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2021.04.024" target="_blank">面向人群计数的对偶卷积神经网络</a></div>
-                    <div class="publication-authors">Huaping Guo, Rui Wang, Jing Wang, Yange Sun, Jian Li, Meng Li</div>
-                    <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 34, no. 4 (2021): 650-654. (in Chinese)</div>
-                    <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2021.04.024.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0307904X2100144X" target="_blank">Real-time robot manipulator tracking control as multilayered time-varying problem</a></div>
-                    <div class="publication-authors">Jian Li, Xinhui Zhu, Yang Shi, Jing Wang, Huaping Guo</div>
-                    <div class="publication-venue">Applied Mathematical Modelling 96 (2021): 355-366</div>
-                    <a href="PDF/li2021real.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2020</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://crad.ict.ac.cn/cn/article/doi/10.7544/issn1000-1239.20200779" target="_blank">基于抖音共同联系人的群体用户关系分析</a></div>
-                    <div class="publication-authors">Hongzhou Le, Shuilong He, Jing Wang</div>
-                    <div class="publication-venue">Computer Research and Development 59 (04), 796-812. (in Chinese)</div>
-                    <a href="PDF/yue2021base.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.25035" target="_blank">EEG source‐space synchrostate transitions and Markov modeling in the math‐gifted brain during a long‐chain reasoning task</a></div>
-                    <div class="publication-authors">Li Zhang, John Q. Gan, Yanmei Zhu, Jing Wang, Haixian Wang</div>
-                    <div class="publication-venue">Human brain mapping 41, no. 13 (2020): 3620-3636</div>
-                    <a href="PDF/zhang2020eeg.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2018</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0KdB90htsp7xa-qt7gVjvHEsTrKiROyBFSgIRa30NfWdkc5C8lrrdE-2QjLiTxE7--b2lG5qfA4gj1niTIqE7e1xuMI-Va6xhuqemJcemQ3AaZVbM2xuf3ZoN2j2s8mUhYo_ia6_jrJA6v0YUgZXB0ttHQUQC_EjTj7uZhFap6MSJ-iNhV0nF0e&uniplatform=NZKPT&language=CHS" target="_blank">基于静息态fMRI中超体素的全脑分割研究</a></div>
-                    <div class="publication-authors">Jing Wang</div>
-                    <div class="publication-venue">Southeast University, Ph.D. Thesis, 2018. (in Chinese)</div>
-                    <a href="PDF/wang2018base.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/full" target="_blank">Generation of individual whole-brain atlases with resting-state fMRI data using simultaneous graph computation and parcellation</a></div>
-                    <div class="publication-authors">Jing Wang, Zhifeng Hao, Haixian Wang</div>
-                    <div class="publication-venue">Frontiers in human neuroscience 12 (2018): 166</div>
-                    <a href="https://github.com/yuzhounh/GWC" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://public-pages-files-2025.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                    <a href="https://www.frontiersin.org/api/v4/articles/343198/file/Data_Sheet_1.PDF/343198_supplementary-materials_datasheets_1_pdf/1" class="resource-link-inline" target="_blank">[Supplementary Materials]</a>
-                </div>
-                
-                <div class="year-header">2016</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/full" target="_blank">A supervoxel-based method for groupwise whole brain parcellation with resting-state fMRI data</a></div>
-                    <div class="publication-authors">Jing Wang, Haixian Wang</div>
-                    <div class="publication-venue">Frontiers in human neuroscience 10 (2016): 659</div>
-                    <a href="https://github.com/yuzhounh/SLIC" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="https://public-pages-files-2025.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                    <a href="https://www.frontiersin.org/api/v4/articles/229127/file/Data_Sheet_1.PDF/229127_supplementary-materials_datasheets_1_pdf/1" class="resource-link-inline" target="_blank">[Supplementary Materials]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-3-319-46675-0_15" target="_blank">Parcellating whole brain for individuals by simple linear iterative clustering</a></div>
-                    <div class="publication-authors">Jing Wang, Zilan Hu, Haixian Wang</div>
-                    <div class="publication-venue">In International Conference on Neural Information Processing 9949, pp. 131-139. Cham: Springer International Publishing, 2016</div>
-                    <a href="https://github.com/yuzhounh/SLIC-individual" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="PDF/wang2016parcellating.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2015</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/7087369" target="_blank">Generalized 2-D principal component analysis by Lp-norm for image analysis</a></div>
-                    <div class="publication-authors">Jing Wang</div>
-                    <div class="publication-venue">IEEE Transactions on Cybernetics 46, no. 3 (2015): 792-803</div>
-                    <a href="https://github.com/yuzhounh/G2DPCA" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="PDF/wang2016generalized.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2014</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809412001334" target="_blank">L1-norm based discriminative spatial pattern for single-trial EEG classification</a></div>
-                    <div class="publication-authors">Qin Tang, Jing Wang, Haixian Wang</div>
-                    <div class="publication-venue">Biomedical Signal Processing and Control 10 (2014): 313-321</div>
-                    <a href="PDF/tang2014l1norm.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="year-header">2013</div>
-                <div class="publication-item">
-                    <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0893608013001640" target="_blank">2DPCA with L1-norm for simultaneously robust and sparse modelling</a></div>
-                    <div class="publication-authors">Haixian Wang, Jing Wang</div>
-                    <div class="publication-venue">Neural Networks 46 (2013): 190-198</div>
-                    <a href="https://github.com/yuzhounh/2DPCAL1-S" class="resource-link-inline" target="_blank">[Code]</a>
-                    <a href="PDF/wang20132dpca.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-            </section>
+                <section>
+                    <h2>Education and Work Experience</h2>
+                    <div class="experience-item">
+                        <div class="experience-title">2025/12 - Present: Associate Professor</div>
+                        <div class="experience-institution">School of Computer and Information Technology, Xinyang Normal University</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title">2018/11 - 2025/12: Lecturer</div>
+                        <div class="experience-institution">School of Computer and Information Technology, Xinyang Normal University</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title">2010/09 - 2018/06: Ph.D. in Biomedical Engineering</div>
+                        <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title">2012/09 - 2013/09: Visiting Student</div>
+                        <div class="experience-institution">State Key Laboratory of Cognitive Neuroscience and Learning, Beijing Normal University</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title">2006/09 - 2010/06: B.S. in Biomedical Engineering</div>
+                        <div class="experience-institution">School of Biological Science and Medical Engineering, Southeast University</div>
+                    </div>
+                </section>
 
-            <section>
-                <h2>Patents</h2>
-                
-                <div class="patent-item">
-                    <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0KZSr1UdG5GDxIcBZhxsqsQkR469q25B0gm-Vw1nOu2ADhqPGnyyBixjVtqAG7xBi7EC18MTSuuoPLHDD1Bwu4ocSy7iRQJPHcLp5MMGKJBR27s_lqsNLNkTTOsiIl9u-HMxqkgjdEphH7hL1hVWb_SDfqRBMuC0UJi2Rkj1wTs1A==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于鲁棒稀疏平滑主成分分析的人脸识别和重建方法及系统</a></div>
-                    <div class="patent-inventors">Jing Wang, Xiao Xie, Li Zhang</div>
-                    <div class="patent-info">China: CN116052243A. 2023. (in Chinese)</div>
-                    <a href="PDF/wang2023one.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="patent-item">
-                    <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0Kz8eZjNGxLelf_wEAfWKTwzCULw2jOdwiULclsNB3nc1TpdHbyUglan-75LO0uKd0EKAuqqwmWOBd9dZExVqrUZL7zcIV-jTkzoaHIIVcnt0ezdxn5SJFyfqh9-20xxkVufCy1bvAX23ANhkF4rbl5_-hJ_kQzh0MxaYJ1nbaLLA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于多层结构的冗余度机械臂多任务控制方法</a></div>
-                    <div class="patent-inventors">Jian Li, Xinhui Zhu, Yange Sun, Li Zhang, Jing Wang</div>
-                    <div class="patent-info">China: CN113084803B. 2022. (in Chinese)</div>
-                    <a href="PDF/li2022one.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="patent-item">
-                    <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0L2rZ6xxYqtHnghWgR3aXebIDwMyFPW3o68-bwpMfusa_rZcSrskLAQwHXE4wIMhYCugy6hinLUIf75jC08gVIPTZLwR2w6TjKuce7HTnztiVUzm7NZ9WhNKcLOcK1sKYGQUyCVyhBGyYKJWGAcQcEHJbVBKjppLsu0ntjSvAx1uA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于广义表示的人脸图像分类方法</a></div>
-                    <div class="patent-inventors">Jing Wang, Bao Zhang, Jian Li, Hejun Xuan, Yange Sun, Huaping Guo</div>
-                    <div class="patent-info">China: CN111931595B. 2022. (in Chinese)</div>
-                    <a href="PDF/wang2022one.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-                
-                <div class="patent-item">
-                    <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0LTvcae2EYR--f3PQNYyrJlfQaFMdnahkg-S4OsuVh62SCm5HrQ066cK_Xl2S54TId2KCo7spgJeFZnEavcHvN2GWGxaMzotfwEbd7Bs5JAtPSxm6_kpXwdAxbIev1zx6qRQ299jtSVtkt3ya6MGA4I-oK2W7DOUrTzl-o9hUdX7Q==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于直接双侧二维主成分分析的图像识别和图像重建方法</a></div>
-                    <div class="patent-inventors">Haixian Wang, Jing Wang</div>
-                    <div class="patent-info">China: CN103955706B. 2017. (in Chinese)</div>
-                    <a href="PDF/wang2014one.pdf" class="resource-link-inline" target="_blank">[PDF]</a>
-                </div>
-            </section>
-        </div>
+                <section>
+                    <h2>Students</h2>
+                    <div class="students-list">
+                        <div class="student-card">
+                            <span class="student-name">Kunpeng Xia</span>
+                            <span class="student-period">2025/09 - Present</span>
+                        </div>
+                        <div class="student-card">
+                            <span class="student-name">Yanfang Chen</span>
+                            <span class="student-period">2024/09 - Present</span>
+                        </div>
+                        <div class="student-card">
+                            <span class="student-name">Hang Hu</span>
+                            <span class="student-period">2024/09 - Present</span>
+                        </div>
+                        <div class="student-card">
+                            <span class="student-name">Pengwei Wang</span>
+                            <span class="student-period">2023/09 - 2026/06</span>
+                        </div>
+                        <div class="student-card">
+                            <span class="student-name">Bao Zhang</span>
+                            <span class="student-period">2019/09 - 2022/06</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-        <div id="tab-students" class="tab-content">
-            <section>
-                <h2>Students</h2>
-                <div class="students-grid">
-                    <div class="student-item">
-                        <img src="Photos/XiaKunpeng.jpg" alt="Kunpeng Xia">
-                        <div class="student-name">Kunpeng Xia</div>
-                        <div class="student-period">2025/09 - Present</div>
-                        <div class="student-email">Email: <a href="mailto:2028479882@qq.com">2028479882@qq.com</a></div>
-                    </div>
-                    <div class="student-item">
-                        <img src="Photos/ChenYanfang.jpg" alt="Yanfang Chen">
-                        <div class="student-name">Yanfang Chen</div>
-                        <div class="student-period">2024/09 - Present</div>
-                        <div class="student-email">Email: <a href="mailto:chenyanfang@xynu.edu.cn">chenyanfang@xynu.edu.cn</a></div>
-                    </div>
-                    <div class="student-item">
-                        <img src="Photos/HuHang.jpg" alt="Hang Hu">
-                        <div class="student-name">Hang Hu</div>
-                        <div class="student-period">2024/09 - Present</div>
-                        <div class="student-email">Email: <a href="mailto:huhang@xynu.edu.cn">huhang@xynu.edu.cn</a></div>
-                    </div>
-                    <div class="student-item">
-                        <img src="Photos/WangPengwei.jpg" alt="Pengwei Wang">
-                        <div class="student-name">Pengwei Wang</div>
-                        <div class="student-period">2023/09 - Present</div>
-                        <div class="student-email">Email: <a href="mailto:wangpw@xynu.edu.cn">wangpw@xynu.edu.cn</a></div>
-                    </div>
-                    <div class="student-item">
-                        <img src="Photos/ZhangBao.jpg" alt="Bao Zhang">
-                        <div class="student-name">Bao Zhang</div>
-                        <div class="student-period">2019/09 - 2022.06</div>
-                        <div class="student-email">Email: <a href="mailto:1418988908@qq.com">1418988908@qq.com</a></div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            <div id="tab-publication" class="tab-content">
+                <section>
+                    <h2>Publications</h2>
 
-        <div id="tab-resources" class="tab-content">
-            <section>
-                <h2>Resources</h2>
-                <div class="resource-item">
-                    <img src="Resources/REPA.png" alt="REPA">
-                    <div>
-                        <div class="resource-title">REPA</div>
-                        <div class="resource-subtitle">Resting-State fMRI Preprocessing and Analysis</div>
-                        <a class="resource-link" href="https://github.com/yuzhounh/REPA" target="_blank">https://github.com/yuzhounh/REPA</a>
+                    <div class="year-header">2025</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/full" target="_blank">Diagnostic classification of mild cognitive impairment in Parkinson's disease using subject-level stratified machine-learning analysis</a></div>
+                        <div class="publication-authors">Jing Wang, Yanfang Chen, Xiao Xie, Pengwei Wang, Hang Hu, Hongfang Han, Lihan Wang, Li Zhang</div>
+                        <div class="publication-venue">Frontiers in Aging Neuroscience 17 (2025): 1687925</div>
+                        <a href="https://github.com/yuzhounh/PD-MCI-Classification" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://public-pages-files-2025.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/pdf" class="resource-link-inline" target="_blank">PDF</a>
+                        <a href="https://www.frontiersin.org/api/v4/articles/1687925/file/Data_Sheet_1.pdf/1687925_data-sheet_1/1" class="resource-link-inline" target="_blank">Supplementary materials</a>
                     </div>
-                </div>
-                <div class="resource-item">
-                    <img src="Resources/AJI.png" alt="AJI">
-                    <div>
-                        <div class="resource-title">AJI</div>
-                        <div class="resource-subtitle">Academic Journal Index</div>
-                        <a class="resource-link" href="https://academic-journal-index.vercel.app/" target="_blank">https://academic-journal-index.vercel.app/</a>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.2097-583X.2025.03.007" target="_blank">基于贝叶斯优化的支持向量回归预测帕金森病严重程度研究</a></div>
+                        <div class="publication-authors">Jing Wang, Pengwei Wang, Xiao Xie, Hongfang Han</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 38, no. 3 (2025): 297-303. (in Chinese)</div>
+                        <a href="https://github.com/yuzhounh/PD-regression-82subs" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.2097-583X.2025.03.007.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
-                </div>
-   
-            </section>
-        </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.mdpi.com/2073-8994/17/2/151" target="_blank">Incorporating symmetric smooth regularizations into sparse logistic regression for classification and feature extraction</a></div>
+                        <div class="publication-authors">Jing Wang, Xiao Xie, Pengwei Wang, Jian Sun, Yaochen Liu, Li Zhang</div>
+                        <div class="publication-venue">Symmetry 17, no. 2 (2025): 151</div>
+                        <a href="https://github.com/yuzhounh/LR-SS" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://mdpi-res.com/d_attachment/symmetry/symmetry-17-00151/article_deploy/symmetry-17-00151-v2.pdf?version=1737510233" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323281" target="_blank">Robust sparse smooth principal component analysis for face reconstruction and recognition</a></div>
+                        <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Jian Li, Hao Cai, Yan Feng</div>
+                        <div class="publication-venue">PLoS One 20, no. 5 (2025): e0323281</div>
+                        <a href="https://github.com/yuzhounh/RSSPCA" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0323281&type=printable" class="resource-link-inline" target="_blank">PDF</a>
+                        <a href="https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0323281.s001" class="resource-link-inline" target="_blank">Supplementary materials</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.liebertpub.com/doi/abs/10.1089/brain.2024.0032" target="_blank">Frontal Cortex Acts as Causality Transition Hub from Mirror Network to Mentalizing Network During Action Intention Understanding</a></div>
+                        <div class="publication-authors">Li Zhang, Lei Zhang, Jing Wang, Yanmei Zhu</div>
+                        <div class="publication-venue">Brain Connectivity 15, no. 1 (2025): 3-18</div>
+                        <a href="PDF/zhang2024frontal.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
 
-        <script>
-        (function() {
-            var links = document.querySelectorAll('.tab-link');
-            var hamburger = document.getElementById('hamburger');
-            var tabs = document.getElementById('tabs');
-            
-            function activate(tabName) {
-                links.forEach(function(l) { l.classList.toggle('active', l.getAttribute('data-tab') === tabName); });
-                document.querySelectorAll('.tab-content').forEach(function(c) {
-                    c.classList.toggle('active', c.id === 'tab-' + tabName);
-                });
-            }
-            
-            function toggleMenu() {
-                hamburger.classList.toggle('active');
-                tabs.classList.toggle('active');
-            }
-            
-            links.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    activate(this.getAttribute('data-tab'));
-                    if (history && history.replaceState) {
-                        history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
-                    }
-                    // 点击菜单项后关闭菜单
-                    hamburger.classList.remove('active');
-                    tabs.classList.remove('active');
-                });
-            });
-            
-            // 汉堡菜单点击事件
-            if (hamburger) {
-                hamburger.addEventListener('click', toggleMenu);
-            }
-            
-            // 窗口大小改变时重置菜单状态
-            window.addEventListener('resize', function() {
-                hamburger.classList.remove('active');
-                tabs.classList.remove('active');
-                
-                // 根据屏幕大小决定是否显示汉堡菜单
-                if (window.innerWidth <= 768) {
-                    hamburger.style.display = 'flex';
-                } else {
-                    hamburger.style.display = 'none';
-                }
-            });
-            
-            // 初始化汉堡菜单显示状态
-            if (window.innerWidth <= 768) {
-                hamburger.style.display = 'flex';
-            } else {
-                hamburger.style.display = 'none';
-            }
-            
-            // Deep link support
-            var hash = (location.hash || '').replace('#', '');
-            if (hash && document.querySelector('.tab-link[data-tab="' + hash + '"]')) {
-                activate(hash);
-            } else {
-                activate('home');
-            }
-        })();
-        </script>
-        
-        <div class="footer">
-            &copy; 2026 Jing Wang. All rights reserved.<br>
+                    <div class="year-header">2024</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" target="_blank">Generalized Representation-based Classification by Lp-norm for Face Recognition</a></div>
+                        <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Xusheng Chen, Hongzhou Yue, Huaping Guo</div>
+                        <div class="publication-venue">IAENG International Journal of Computer Science 51, no. 2 (2024): 104-114</div>
+                        <a href="https://github.com/yuzhounh/GRC" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2022</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/24/12913" target="_blank">Fusion of bilateral 2DPCA information for image reconstruction and recognition</a></div>
+                        <div class="publication-authors">Jing Wang, Mengli Zhao, Xiao Xie, Li Zhang, Wenbo Zhu</div>
+                        <div class="publication-venue">Applied Sciences 12, no. 24 (2022): 12913</div>
+                        <a href="https://github.com/yuzhounh/DB2DPCA" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://mdpi-res.com/d_attachment/applsci/applsci-12-12913/article_deploy/applsci-12-12913-v2.pdf?version=1671519093" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/23/11967" target="_blank">A nested u-shaped residual codec network for strip steel defect detection</a></div>
+                        <div class="publication-authors">Huaping Guo, Shanggui Zhan, Li Zhang, Wenbo Zhu, Yange Sun, Jing Wang</div>
+                        <div class="publication-venue">Applied Sciences 12, no. 23 (2022): 11967</div>
+                        <a href="https://mdpi-res.com/d_attachment/applsci/applsci-12-11967/article_deploy/applsci-12-11967.pdf?version=1669208575" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-1642-9_30" target="_blank">Causal Connectivity Transition from Action Observation to Mentalizing Network for Understanding Other's Action Intention</a></div>
+                        <div class="publication-authors">Li Zhang, Jing Wang, Yanmei Zhu</div>
+                        <div class="publication-venue">In International Conference on Neural Information Processing 1792, pp. 350-360. Singapore: Springer Nature Singapore, 2022</div>
+                        <a href="PDF/zhang2023causal.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2022.03.024" target="_blank">基于广义稀疏逻辑回归的全脑分类</a></div>
+                        <div class="publication-authors">Jing Wang, Bao Zhang, Xiao Xie, Jian Li, Li Zhang, Huaping Guo</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 35, no. 3 (2022): 488-493. (in Chinese)</div>
+                        <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2022.03.024.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0JLxj7LQJ-QOAahlFpQDnSnlJkDPEDQJLWH1blMIwUtRXMWQt-A5dRfyFnzUT3gyTKR5jVjyxw4Ne0-ZLEiYHXb_aKeWQipXucooThLB1HvYeG5-VhEz8t6NbwABxyrJTOQWNrpMCl57Dom-Byf14IR5pEfNx39nnx4Vem3CGb_ng==&uniplatform=NZKPT&language=CHS" target="_blank">新工科背景下人工智能课程的教学改革</a></div>
+                        <div class="publication-authors">Yan Feng, Lei You, Jian Li, Jing Wang</div>
+                        <div class="publication-venue">Fujian Computer 38, no. 4 (2022): 118-120. (in Chinese)</div>
+                        <a href="PDF/feng2022teaching.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2021</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/9642176" target="_blank">Robot manipulator control via solving four-layered time-variant equations including linear, nonlinear equalities and inequalities</a></div>
+                        <div class="publication-authors">Xinhui Zhu, Li Zhang, Yang Shi, Jing Wang, Jian Li</div>
+                        <div class="publication-venue">In International Conference on Intelligent Control and Information Processing (ICICIP), pp. 416-421. IEEE, 2021</div>
+                        <a href="PDF/zhu2021robot.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2021.04.024" target="_blank">面向人群计数的对偶卷积神经网络</a></div>
+                        <div class="publication-authors">Huaping Guo, Rui Wang, Jing Wang, Yange Sun, Jian Li, Meng Li</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 34, no. 4 (2021): 650-654. (in Chinese)</div>
+                        <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2021.04.024.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0307904X2100144X" target="_blank">Real-time robot manipulator tracking control as multilayered time-varying problem</a></div>
+                        <div class="publication-authors">Jian Li, Xinhui Zhu, Yang Shi, Jing Wang, Huaping Guo</div>
+                        <div class="publication-venue">Applied Mathematical Modelling 96 (2021): 355-366</div>
+                        <a href="PDF/li2021real.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2020</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://crad.ict.ac.cn/cn/article/doi/10.7544/issn1000-1239.20200779" target="_blank">基于抖音共同联系人的群体用户关系分析</a></div>
+                        <div class="publication-authors">Hongzhou Le, Shuilong He, Jing Wang</div>
+                        <div class="publication-venue">Computer Research and Development 59 (04), 796-812. (in Chinese)</div>
+                        <a href="PDF/yue2021analysis.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.25035" target="_blank">EEG source‐space synchrostate transitions and Markov modeling in the math‐gifted brain during a long‐chain reasoning task</a></div>
+                        <div class="publication-authors">Li Zhang, John Q. Gan, Yanmei Zhu, Jing Wang, Haixian Wang</div>
+                        <div class="publication-venue">Human brain mapping 41, no. 13 (2020): 3620-3636</div>
+                        <a href="PDF/zhang2020eeg.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2018</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0KdB90htsp7xa-qt7gVjvHEsTrKiROyBFSgIRa30NfWdkc5C8lrrdE-2QjLiTxE7--b2lG5qfA4gj1niTIqE7e1xuMI-Va6xhuqemJcemQ3AaZVbM2xuf3ZoN2j2s8mUhYo_ia6_jrJA6v0YUgZXB0ttHQUQC_EjTj7uZhFap6MSJ-iNhV0nF0e&uniplatform=NZKPT&language=CHS" target="_blank">基于静息态fMRI中超体素的全脑分割研究</a></div>
+                        <div class="publication-authors">Jing Wang</div>
+                        <div class="publication-venue">Southeast University, Ph.D. Thesis, 2018. (in Chinese)</div>
+                        <a href="PDF/wang2018thesis.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/full" target="_blank">Generation of individual whole-brain atlases with resting-state fMRI data using simultaneous graph computation and parcellation</a></div>
+                        <div class="publication-authors">Jing Wang, Zhifeng Hao, Haixian Wang</div>
+                        <div class="publication-venue">Frontiers in human neuroscience 12 (2018): 166</div>
+                        <a href="https://github.com/yuzhounh/GWC" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://public-pages-files-2025.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/pdf" class="resource-link-inline" target="_blank">PDF</a>
+                        <a href="https://www.frontiersin.org/api/v4/articles/343198/file/Data_Sheet_1.PDF/343198_supplementary-materials_datasheets_1_pdf/1" class="resource-link-inline" target="_blank">Supplementary Materials</a>
+                    </div>
+
+                    <div class="year-header">2016</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/full" target="_blank">A supervoxel-based method for groupwise whole brain parcellation with resting-state fMRI data</a></div>
+                        <div class="publication-authors">Jing Wang, Haixian Wang</div>
+                        <div class="publication-venue">Frontiers in human neuroscience 10 (2016): 659</div>
+                        <a href="https://github.com/yuzhounh/SLIC" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="https://public-pages-files-2025.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/pdf" class="resource-link-inline" target="_blank">PDF</a>
+                        <a href="https://www.frontiersin.org/api/v4/articles/229127/file/Data_Sheet_1.PDF/229127_supplementary-materials_datasheets_1_pdf/1" class="resource-link-inline" target="_blank">Supplementary Materials</a>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-3-319-46675-0_15" target="_blank">Parcellating whole brain for individuals by simple linear iterative clustering</a></div>
+                        <div class="publication-authors">Jing Wang, Zilan Hu, Haixian Wang</div>
+                        <div class="publication-venue">In International Conference on Neural Information Processing 9949, pp. 131-139. Cham: Springer International Publishing, 2016</div>
+                        <a href="https://github.com/yuzhounh/SLIC-individual" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="PDF/wang2016parcellating.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2015</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/7087369" target="_blank">Generalized 2-D principal component analysis by Lp-norm for image analysis</a></div>
+                        <div class="publication-authors">Jing Wang</div>
+                        <div class="publication-venue">IEEE Transactions on Cybernetics 46, no. 3 (2015): 792-803</div>
+                        <a href="https://github.com/yuzhounh/G2DPCA" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="PDF/wang2016generalized.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2014</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809412001334" target="_blank">L1-norm based discriminative spatial pattern for single-trial EEG classification</a></div>
+                        <div class="publication-authors">Qin Tang, Jing Wang, Haixian Wang</div>
+                        <div class="publication-venue">Biomedical Signal Processing and Control 10 (2014): 313-321</div>
+                        <a href="PDF/tang2014l1.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="year-header">2013</div>
+                    <div class="publication-item">
+                        <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0893608013001640" target="_blank">2DPCA with L1-norm for simultaneously robust and sparse modelling</a></div>
+                        <div class="publication-authors">Haixian Wang, Jing Wang</div>
+                        <div class="publication-venue">Neural Networks 46 (2013): 190-198</div>
+                        <a href="https://github.com/yuzhounh/2DPCAL1-S" class="resource-link-inline" target="_blank">Code</a>
+                        <a href="PDF/wang20132dpca.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Patents</h2>
+
+                    <div class="patent-item">
+                        <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0KZSr1UdG5GDxIcBZhxsqsQkR469q25B0gm-Vw1nOu2ADhqPGnyyBixjVtqAG7xBi7EC18MTSuuoPLHDD1Bwu4ocSy7iRQJPHcLp5MMGKJBR27s_lqsNLNkTTOsiIl9u-HMxqkgjdEphH7hL1hVWb_SDfqRBMuC0UJi2Rkj1wTs1A==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于鲁棒稀疏平滑主成分分析的人脸识别和重建方法及系统</a></div>
+                        <div class="patent-inventors">Jing Wang, Xiao Xie, Li Zhang</div>
+                        <div class="patent-info">China: CN116052243A. 2023. (in Chinese)</div>
+                        <a href="PDF/wang2023patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0Kz8eZjNGxLelf_wEAfWKTwzCULw2jOdwiULclsNB3nc1TpdHbyUglan-75LO0uKd0EKAuqqwmWOBd9dZExVqrUZL7zcIV-jTkzoaHIIVcnt0ezdxn5SJFyfqh9-20xxkVufCy1bvAX23ANhkF4rbl5_-hJ_kQzh0MxaYJ1nbaLLA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于多层结构的冗余度机械臂多任务控制方法</a></div>
+                        <div class="patent-inventors">Jian Li, Xinhui Zhu, Yange Sun, Li Zhang, Jing Wang</div>
+                        <div class="patent-info">China: CN113084803B. 2022. (in Chinese)</div>
+                        <a href="PDF/li2022patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0L2rZ6xxYqtHnghWgR3aXebIDwMyFPW3o68-bwpMfusa_rZcSrskLAQwHXE4wIMhYCugy6hinLUIf75jC08gVIPTZLwR2w6TjKuce7HTnztiVUzm7NZ9WhNKcLOcK1sKYGQUyCVyhBGyYKJWGAcQcEHJbVBKjppLsu0ntjSvAx1uA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于广义表示的人脸图像分类方法</a></div>
+                        <div class="patent-inventors">Jing Wang, Bao Zhang, Jian Li, Hejun Xuan, Yange Sun, Huaping Guo</div>
+                        <div class="patent-info">China: CN111931595B. 2022. (in Chinese)</div>
+                        <a href="PDF/wang2022patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+
+                    <div class="patent-item">
+                        <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0LTvcae2EYR--f3PQNYyrJlfQaFMdnahkg-S4OsuVh62SCm5HrQ066cK_Xl2S54TId2KCo7spgJeFZnEavcHvN2GWGxaMzotfwEbd7Bs5JAtPSxm6_kpXwdAxbIev1zx6qRQ299jtSVtkt3ya6MGA4I-oK2W7DOUrTzl-o9hUdX7Q==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于直接双侧二维主成分分析的图像识别和图像重建方法</a></div>
+                        <div class="patent-inventors">Haixian Wang, Jing Wang</div>
+                        <div class="patent-info">China: CN103955706B. 2017. (in Chinese)</div>
+                        <a href="PDF/wang2014patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tab-vibes" class="tab-content">
+                <section>
+                    <h2>Vibes</h2>
+                    <div class="vibe-item">
+                        <div class="vibe-title">REPA</div>
+                        <div class="vibe-subtitle">Resting-State fMRI Preprocessing and Analysis</div>
+                        <a class="vibe-link" href="https://github.com/yuzhounh/REPA" target="_blank"><span>https://github.com/yuzhounh/REPA</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">AJI</div>
+                        <div class="vibe-subtitle">Academic Journal Index</div>
+                        <a class="vibe-link" href="https://academic-journal-index.vercel.app/" target="_blank"><span>https://academic-journal-index.vercel.app/</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer">
+                &copy; 2025-2026 Jing Wang. All rights reserved.
+            </div>
         </div>
     </div>
+
+    <script>
+    (function() {
+        var links = document.querySelectorAll('.tab-link');
+        var hamburger = document.getElementById('hamburger');
+        var tabs = document.getElementById('tabs');
+
+        function activate(tabName) {
+            links.forEach(function(l) {
+                l.classList.toggle('active', l.getAttribute('data-tab') === tabName);
+            });
+            document.querySelectorAll('.tab-content').forEach(function(c) {
+                c.classList.toggle('active', c.id === 'tab-' + tabName);
+            });
+        }
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            tabs.classList.toggle('active');
+        }
+
+        links.forEach(function(link) {
+            link.addEventListener('click', function() {
+                activate(this.getAttribute('data-tab'));
+                if (history && history.replaceState) {
+                    history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
+                }
+                hamburger.classList.remove('active');
+                tabs.classList.remove('active');
+            });
+        });
+
+        if (hamburger) {
+            hamburger.addEventListener('click', toggleMenu);
+        }
+
+        window.addEventListener('resize', function() {
+            hamburger.classList.remove('active');
+            tabs.classList.remove('active');
+        });
+
+        var hash = (location.hash || '').replace('#', '');
+        var hashMap = { resources: 'vibes', students: 'home' };
+        if (hashMap[hash]) hash = hashMap[hash];
+        if (hash && document.querySelector('.tab-link[data-tab="' + hash + '"]')) {
+            activate(hash);
+        } else {
+            activate('home');
+        }
+    })();
+    </script>
 </body>
-</html>
 </html>
