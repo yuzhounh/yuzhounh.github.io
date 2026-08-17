@@ -411,9 +411,15 @@
         }
 
         /* Vibes */
+        .vibe-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
         .vibe-item {
             padding: 18px 20px;
-            margin-bottom: 12px;
             background: var(--color-item-bg);
             border: 1px solid var(--color-item-border);
             border-radius: var(--radius-md);
@@ -425,8 +431,30 @@
             border-color: #dbeafe;
         }
 
-        .vibe-item:last-child {
-            margin-bottom: 0;
+        .vibe-category {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 28px 0 12px;
+        }
+
+        .vibe-category:first-of-type {
+            margin-top: 0;
+        }
+
+        .vibes-note {
+            font-size: 0.82rem;
+            color: var(--color-text-light);
+            margin: -8px 0 20px;
+            line-height: 1.55;
+        }
+
+        .vibe-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .vibe-title {
@@ -439,27 +467,7 @@
         .vibe-subtitle {
             color: var(--color-text-muted);
             font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .vibe-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--color-accent);
-            text-decoration: none;
-            font-size: 0.85rem;
-            word-break: break-all;
-            transition: color var(--transition);
-        }
-
-        .vibe-link:hover {
-            color: var(--color-accent-hover);
-        }
-
-        .vibe-link i {
-            font-size: 0.75rem;
-            flex-shrink: 0;
+            margin-bottom: 10px;
         }
 
         /* Footer */
@@ -532,6 +540,10 @@
             }
 
             .students-list {
+                grid-template-columns: 1fr;
+            }
+
+            .vibe-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -873,15 +885,224 @@
             <div id="tab-vibes" class="tab-content">
                 <section>
                     <h2>Vibes</h2>
+                    <p class="vibes-note">Research repos are here too. Only part of 2025-and-later projects actually used AI — that's when AI-assisted work started finishing, not when I started learning. Years shown are publication dates; the work itself usually happened much earlier.</p>
+
+                    <div class="vibe-category">Research Projects</div>
+                    <div class="vibe-grid">
                     <div class="vibe-item">
-                        <div class="vibe-title">REPA</div>
-                        <div class="vibe-subtitle">Resting-State fMRI Preprocessing and Analysis</div>
-                        <a class="vibe-link" href="https://github.com/yuzhounh/REPA" target="_blank"><span>https://github.com/yuzhounh/REPA</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <div class="vibe-title">PD-MCI-Nomogram</div>
+                        <div class="vibe-subtitle">Nomogram analysis for PD-MCI classification.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/PD-MCI-Nomogram" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
                     </div>
                     <div class="vibe-item">
-                        <div class="vibe-title">AJI</div>
-                        <div class="vibe-subtitle">Academic Journal Index</div>
-                        <a class="vibe-link" href="https://academic-journal-index.vercel.app/" target="_blank"><span>https://academic-journal-index.vercel.app/</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <div class="vibe-title">PD-MCI-Classification</div>
+                        <div class="vibe-subtitle">2025 · Diagnostic classification of mild cognitive impairment in Parkinson's disease using subject-level stratified machine-learning analysis.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/PD-MCI-Classification" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">PD-regression-82subs</div>
+                        <div class="vibe-subtitle">2025 · Bayesian-optimized support vector regression for predicting Parkinson's disease severity.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/PD-regression-82subs" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">LR-SS</div>
+                        <div class="vibe-subtitle">2025 · Incorporating symmetric smooth regularizations into sparse logistic regression for classification and feature extraction.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/LR-SS" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">RSSPCA</div>
+                        <div class="vibe-subtitle">2025 · Robust sparse smooth principal component analysis for face reconstruction and recognition.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/RSSPCA" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">GRC</div>
+                        <div class="vibe-subtitle">2024 · Generalized representation-based classification by Lp-norm for face recognition.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/GRC" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">DB2DPCA</div>
+                        <div class="vibe-subtitle">2022 · Fusion of bilateral 2DPCA information for image reconstruction and recognition.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/DB2DPCA" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">GWC</div>
+                        <div class="vibe-subtitle">2018 · Generation of individual whole-brain atlases with resting-state fMRI data using simultaneous graph computation and parcellation.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/GWC" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">SLIC</div>
+                        <div class="vibe-subtitle">2016 · A supervoxel-based method for groupwise whole brain parcellation with resting-state fMRI data.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/SLIC" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">G2DPCA</div>
+                        <div class="vibe-subtitle">2015 · Generalized 2-D principal component analysis by Lp-norm for image analysis.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/G2DPCA" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">2DPCAL1-S</div>
+                        <div class="vibe-subtitle">2013 · 2DPCA with L1-norm for simultaneously robust and sparse modelling.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/2DPCAL1-S" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="vibe-category">Web Apps</div>
+                    <div class="vibe-grid">
+                    <div class="vibe-item">
+                        <div class="vibe-title">AJI Editions</div>
+                        <div class="vibe-subtitle">Multi-year AJI: switch between CAS/XR partition tables and JCR impact factor datasets.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/aji-editions" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://aji-editions.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Academic Journal Index</div>
+                        <div class="vibe-subtitle">Search journals by title or browse journals by category.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/academic-journal-index" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://academic-journal-index.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">English Word Master</div>
+                        <div class="vibe-subtitle">AI-powered vocabulary learning: text analysis, lemmatization, quizzes, mistake review, and Firebase sync.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/english-word-master" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://english-word-master.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Music Collection</div>
+                        <div class="vibe-subtitle">Export, merge, deduplicate, categorize NetEase and Kuwo playlists, and display them as a static site.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/music-collection" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://yuzhounh.github.io/music-collection/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Douban Movies Ranking</div>
+                        <div class="vibe-subtitle">Douban movie list crawler and logarithmic popularity ranking.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/douban-movies-ranking" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://yuzhounh.github.io/douban-movies-ranking/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Douban Books Ranking</div>
+                        <div class="vibe-subtitle">Douban book tags, lists, and series rankings.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/douban-books-ranking" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://yuzhounh.github.io/douban-books-ranking/" class="resource-link-inline" target="_blank">Site</a>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="vibe-category">Tools &amp; Extensions</div>
+                    <div class="vibe-grid">
+                    <div class="vibe-item">
+                        <div class="vibe-title">REPA</div>
+                        <div class="vibe-subtitle">Resting-State fMRI Preprocessing and Analysis.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/REPA" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">AI Agent Landscape</div>
+                        <div class="vibe-subtitle">A Chinese landscape of AI agents, coding tools, work agents, plans, routers, and foundation models.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/ai-agent-landscape" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">TimeLens</div>
+                        <div class="vibe-subtitle">Local-first Chrome extension for website time tracking, visualization, and periodic reports.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/timelens-chrome-extension" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Tampermonkey Scripts</div>
+                        <div class="vibe-subtitle">A collection of Tampermonkey userscripts.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/Tampermonkey-scripts" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">DSH Windows Tray Launcher</div>
+                        <div class="vibe-subtitle">An unofficial Windows system tray launcher for DeepSeek Harness (dsh).</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/dsh-windows-tray-launcher" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Open with Antigravity</div>
+                        <div class="vibe-subtitle">Add Antigravity editor options to the Windows context menu for files, folders, and folder backgrounds.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/Open-with-Antigravity" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Open with Cursor</div>
+                        <div class="vibe-subtitle">Add Cursor editor options to the Windows context menu for files, folders, and folder backgrounds.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/Open-with-Cursor" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Open with Cursor (by reg)</div>
+                        <div class="vibe-subtitle">Registry-based variant for adding Cursor to the Windows context menu.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/Open-with-Cursor-by-reg" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="vibe-category">Developer Utilities</div>
+                    <div class="vibe-grid">
+                    <div class="vibe-item">
+                        <div class="vibe-title">Rename PDF Files</div>
+                        <div class="vibe-subtitle">Batch rename PDF files.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/rename-pdf-files" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">Python Image Export Comparison</div>
+                        <div class="vibe-subtitle">Compare image export settings and output quality in Python.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/python-image-export-comparison" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item">
+                        <div class="vibe-title">MATLAB Figure Export Comparison</div>
+                        <div class="vibe-subtitle">Compare figure export settings and output quality in MATLAB.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/matlab-figure-export-comparison" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
                     </div>
                 </section>
             </div>
