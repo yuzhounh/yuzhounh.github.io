@@ -424,6 +424,9 @@
             border: 1px solid var(--color-item-border);
             border-radius: var(--radius-md);
             transition: background var(--transition), border-color var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .vibe-item:hover {
@@ -444,30 +447,83 @@
             margin-top: 0;
         }
 
-        .vibes-note {
-            font-size: 0.82rem;
-            color: var(--color-text-light);
-            margin: -8px 0 20px;
-            line-height: 1.55;
+        .vibe-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .vibe-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #bfdbfe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .vibe-icon-letter {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--color-accent);
+            line-height: 1;
+            user-select: none;
+        }
+
+        .vibe-icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .vibe-icon.has-img {
+            background: transparent;
+            border-color: transparent;
+        }
+
+        .vibe-icon.has-img .vibe-icon-letter {
+            display: none;
+        }
+
+        .vibe-icon.has-img .vibe-icon-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
         }
 
         .vibe-links {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
+            margin-top: auto;
+            padding-top: 12px;
         }
 
         .vibe-title {
             font-weight: 700;
             font-size: 1rem;
             color: var(--color-text);
-            margin-bottom: 4px;
+            margin: 0;
+            min-width: 0;
+            line-height: 1.3;
         }
 
         .vibe-subtitle {
             color: var(--color-text-muted);
             font-size: 0.9rem;
-            margin-bottom: 10px;
+            margin: 0;
+            flex: 1;
+            line-height: 1.5;
         }
 
         /* Footer */
@@ -885,143 +941,69 @@
             <div id="tab-vibes" class="tab-content">
                 <section>
                     <h2>Vibes</h2>
-                    <p class="vibes-note">Research repos are here too. Only part of 2025-and-later projects actually used AI — that's when AI-assisted work started finishing, not when we started learning. Years shown are publication dates; the work itself usually happened much earlier.</p>
-
-                    <div class="vibe-category">Research Projects</div>
-                    <div class="vibe-grid">
-                    <div class="vibe-item">
-                        <div class="vibe-title">PD-MCI-Nomogram</div>
-                        <div class="vibe-subtitle">Nomogram analysis for PD-MCI classification.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/PD-MCI-Nomogram" class="resource-link-inline" target="_blank">Code</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">PD-MCI-Classification</div>
-                        <div class="vibe-subtitle">2025 · Diagnostic classification of mild cognitive impairment in Parkinson's disease using subject-level stratified machine-learning analysis.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/PD-MCI-Classification" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/full" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">PD-regression-82subs</div>
-                        <div class="vibe-subtitle">2025 · Bayesian-optimized support vector regression for predicting Parkinson's disease severity.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/PD-regression-82subs" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.2097-583X.2025.03.007" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">LR-SS</div>
-                        <div class="vibe-subtitle">2025 · Incorporating symmetric smooth regularizations into sparse logistic regression for classification and feature extraction.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/LR-SS" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.mdpi.com/2073-8994/17/2/151" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">RSSPCA</div>
-                        <div class="vibe-subtitle">2025 · Robust sparse smooth principal component analysis for face reconstruction and recognition.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/RSSPCA" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323281" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">GRC</div>
-                        <div class="vibe-subtitle">2024 · Generalized representation-based classification by Lp-norm for face recognition.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/GRC" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">DB2DPCA</div>
-                        <div class="vibe-subtitle">2022 · Fusion of bilateral 2DPCA information for image reconstruction and recognition.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/DB2DPCA" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.mdpi.com/2076-3417/12/24/12913" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">GWC</div>
-                        <div class="vibe-subtitle">2018 · Generation of individual whole-brain atlases with resting-state fMRI data using simultaneous graph computation and parcellation.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/GWC" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/full" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">SLIC</div>
-                        <div class="vibe-subtitle">2016 · A supervoxel-based method for groupwise whole brain parcellation with resting-state fMRI data.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/SLIC" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/full" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">G2DPCA</div>
-                        <div class="vibe-subtitle">2015 · Generalized 2-D principal component analysis by Lp-norm for image analysis.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/G2DPCA" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://ieeexplore.ieee.org/document/7087369" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">2DPCAL1-S</div>
-                        <div class="vibe-subtitle">2013 · 2DPCA with L1-norm for simultaneously robust and sparse modelling.</div>
-                        <div class="vibe-links">
-                            <a href="https://github.com/yuzhounh/2DPCAL1-S" class="resource-link-inline" target="_blank">Code</a>
-                            <a href="https://www.sciencedirect.com/science/article/pii/S0893608013001640" class="resource-link-inline" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    </div>
 
                     <div class="vibe-category">Web Apps</div>
                     <div class="vibe-grid">
-                    <div class="vibe-item">
-                        <div class="vibe-title">AJI Editions</div>
+                    <div class="vibe-item" data-repo="aji-editions">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">A</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">AJI Editions</div>
+                        </div>
                         <div class="vibe-subtitle">Multi-year AJI: switch between CAS/XR partition tables and JCR impact factor datasets.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/aji-editions" class="resource-link-inline" target="_blank">Code</a>
                             <a href="https://aji-editions.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Academic Journal Index</div>
+                    <div class="vibe-item" data-repo="academic-journal-index">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">A</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Academic Journal Index</div>
+                        </div>
                         <div class="vibe-subtitle">Search journals by title or browse journals by category.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/academic-journal-index" class="resource-link-inline" target="_blank">Code</a>
                             <a href="https://academic-journal-index.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">English Word Master</div>
+                    <div class="vibe-item" data-repo="english-word-master">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">E</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">English Word Master</div>
+                        </div>
                         <div class="vibe-subtitle">AI-powered vocabulary learning: text analysis, lemmatization, quizzes, mistake review, and Firebase sync.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/english-word-master" class="resource-link-inline" target="_blank">Code</a>
                             <a href="https://english-word-master.vercel.app/" class="resource-link-inline" target="_blank">Site</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Music Collection</div>
+                    <div class="vibe-item" data-repo="music-collection">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">M</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Music Collection</div>
+                        </div>
                         <div class="vibe-subtitle">Export, merge, deduplicate, categorize NetEase and Kuwo playlists, and display them as a static site.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/music-collection" class="resource-link-inline" target="_blank">Code</a>
                             <a href="https://yuzhounh.github.io/music-collection/" class="resource-link-inline" target="_blank">Site</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Douban Movies Ranking</div>
+                    <div class="vibe-item" data-repo="douban-movies-ranking">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">D</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Douban Movies Ranking</div>
+                        </div>
                         <div class="vibe-subtitle">Douban movie list crawler and logarithmic popularity ranking.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/douban-movies-ranking" class="resource-link-inline" target="_blank">Code</a>
                             <a href="https://yuzhounh.github.io/douban-movies-ranking/" class="resource-link-inline" target="_blank">Site</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Douban Books Ranking</div>
+                    <div class="vibe-item" data-repo="douban-books-ranking">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">D</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Douban Books Ranking</div>
+                        </div>
                         <div class="vibe-subtitle">Douban book tags, lists, and series rankings.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/douban-books-ranking" class="resource-link-inline" target="_blank">Code</a>
@@ -1032,57 +1014,91 @@
 
                     <div class="vibe-category">Tools &amp; Extensions</div>
                     <div class="vibe-grid">
-                    <div class="vibe-item">
-                        <div class="vibe-title">REPA</div>
+                    <div class="vibe-item" data-repo="REPA">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">R</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">REPA</div>
+                        </div>
                         <div class="vibe-subtitle">Resting-State fMRI Preprocessing and Analysis.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/REPA" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">AI Agent Landscape</div>
+                    <div class="vibe-item" data-repo="ai-agent-landscape">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">A</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">AI Agent Landscape</div>
+                        </div>
                         <div class="vibe-subtitle">A Chinese landscape of AI agents, coding tools, work agents, plans, routers, and foundation models.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/ai-agent-landscape" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">TimeLens</div>
+                    <div class="vibe-item" data-repo="timelens-chrome-extension">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">T</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">TimeLens</div>
+                        </div>
                         <div class="vibe-subtitle">Local-first Chrome extension for website time tracking, visualization, and periodic reports.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/timelens-chrome-extension" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Tampermonkey Scripts</div>
+                    <div class="vibe-item" data-repo="focus-pace">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">F</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Focus Pace</div>
+                        </div>
+                        <div class="vibe-subtitle">A calm Windows focus-and-rest rhythm utility.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/focus-pace" class="resource-link-inline" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <div class="vibe-item" data-repo="Tampermonkey-scripts">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">T</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Tampermonkey Scripts</div>
+                        </div>
                         <div class="vibe-subtitle">A collection of Tampermonkey userscripts.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/Tampermonkey-scripts" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">DSH Windows Tray Launcher</div>
+                    <div class="vibe-item" data-repo="dsh-windows-tray-launcher">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">D</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">DSH Windows Tray Launcher</div>
+                        </div>
                         <div class="vibe-subtitle">An unofficial Windows system tray launcher for DeepSeek Harness (dsh).</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/dsh-windows-tray-launcher" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Open with Antigravity</div>
+                    <div class="vibe-item" data-repo="Open-with-Antigravity">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">O</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Open with Antigravity</div>
+                        </div>
                         <div class="vibe-subtitle">Add Antigravity editor options to the Windows context menu for files, folders, and folder backgrounds.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/Open-with-Antigravity" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Open with Cursor</div>
+                    <div class="vibe-item" data-repo="Open-with-Cursor">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">O</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Open with Cursor</div>
+                        </div>
                         <div class="vibe-subtitle">Add Cursor editor options to the Windows context menu for files, folders, and folder backgrounds.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/Open-with-Cursor" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Open with Cursor (by reg)</div>
+                    <div class="vibe-item" data-repo="Open-with-Cursor-by-reg">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">O</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Open with Cursor (by reg)</div>
+                        </div>
                         <div class="vibe-subtitle">Registry-based variant for adding Cursor to the Windows context menu.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/Open-with-Cursor-by-reg" class="resource-link-inline" target="_blank">Code</a>
@@ -1092,22 +1108,31 @@
 
                     <div class="vibe-category">Developer Utilities</div>
                     <div class="vibe-grid">
-                    <div class="vibe-item">
-                        <div class="vibe-title">Rename PDF Files</div>
+                    <div class="vibe-item" data-repo="rename-pdf-files">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">R</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Rename PDF Files</div>
+                        </div>
                         <div class="vibe-subtitle">Batch rename PDF files.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/rename-pdf-files" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">Python Image Export Comparison</div>
+                    <div class="vibe-item" data-repo="python-image-export-comparison">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">P</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">Python Image Export Comparison</div>
+                        </div>
                         <div class="vibe-subtitle">Compare image export settings and output quality in Python.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/python-image-export-comparison" class="resource-link-inline" target="_blank">Code</a>
                         </div>
                     </div>
-                    <div class="vibe-item">
-                        <div class="vibe-title">MATLAB Figure Export Comparison</div>
+                    <div class="vibe-item" data-repo="matlab-figure-export-comparison">
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">M</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">MATLAB Figure Export Comparison</div>
+                        </div>
                         <div class="vibe-subtitle">Compare figure export settings and output quality in MATLAB.</div>
                         <div class="vibe-links">
                             <a href="https://github.com/yuzhounh/matlab-figure-export-comparison" class="resource-link-inline" target="_blank">Code</a>
@@ -1171,6 +1196,95 @@
         } else {
             activate('home');
         }
+
+        var VIBE_EXTERNAL_ICONS = {
+            'REPA': 'assets/vibe-icons/repa.png',
+            'ai-agent-landscape': 'assets/vibe-icons/ai-agent-landscape.png',
+            'aji-editions': 'assets/vibe-icons/aji-editions.svg',
+            'academic-journal-index': 'assets/vibe-icons/academic-journal-index.svg',
+            'english-word-master': 'assets/vibe-icons/english-word-master.png',
+            'music-collection': 'assets/vibe-icons/music-collection.png',
+            'douban-movies-ranking': 'assets/vibe-icons/douban-movies-ranking.png',
+            'douban-books-ranking': 'assets/vibe-icons/douban-books-ranking.png',
+            'timelens-chrome-extension': 'assets/vibe-icons/timelens-chrome-extension.png',
+            'focus-pace': 'assets/vibe-icons/focus-pace.png',
+            'Tampermonkey-scripts': 'assets/vibe-icons/Tampermonkey-scripts.png',
+            'dsh-windows-tray-launcher': 'assets/vibe-icons/dsh-windows-tray-launcher.svg',
+            'Open-with-Antigravity': 'assets/vibe-icons/Open-with-Antigravity.png',
+            'Open-with-Cursor': 'assets/vibe-icons/Open-with-Cursor.svg',
+            'Open-with-Cursor-by-reg': 'assets/vibe-icons/Open-with-Cursor.svg',
+            'rename-pdf-files': 'assets/vibe-icons/rename-pdf-files.png',
+            'python-image-export-comparison': 'assets/vibe-icons/python-image-export-comparison.png',
+            'matlab-figure-export-comparison': 'assets/vibe-icons/matlab-figure-export-comparison.png'
+        };
+
+        var VIBE_ICON_PATHS = {
+            'REPA': ['assets/favicon.png', 'assets/icon.svg'],
+            'ai-agent-landscape': ['assets/favicon.png', 'assets/icon.svg'],
+            'aji-editions': ['public/favicon.svg', 'public/favicon.ico', 'src/app/favicon.ico'],
+            'academic-journal-index': ['public/favicon.svg', 'public/favicon.ico', 'src/app/favicon.ico'],
+            'english-word-master': ['public/favicon.png', 'public/logo.svg', 'public/favicon.svg', 'public/icon-192.png'],
+            'timelens-chrome-extension': ['icons/timer-128.png', 'icons/timer-48.png', 'icons/timer.svg'],
+            'focus-pace': ['src/FocusPace/Assets/FocusPace.ico'],
+            'dsh-windows-tray-launcher': ['dsh-favicon-black.svg'],
+            'rename-pdf-files': ['logo.ico']
+        };
+
+        var GENERIC_ICON_PATHS = [
+            'logo.ico', 'logo.png', 'icon.png', 'favicon.png', 'favicon.ico', 'favicon.svg',
+            'public/favicon.svg', 'public/favicon.png', 'public/logo.svg'
+        ];
+
+        function setVibeIcon(img, iconWrap, url, onFail) {
+            var probe = new Image();
+            probe.onload = function() {
+                img.src = url;
+                img.removeAttribute('hidden');
+                iconWrap.classList.add('has-img');
+            };
+            probe.onerror = function() {
+                if (onFail) onFail();
+            };
+            probe.src = url;
+        }
+
+        function loadVibeIcon(item) {
+            var repo = item.getAttribute('data-repo');
+            if (!repo) return;
+
+            var iconWrap = item.querySelector('.vibe-icon');
+            var img = item.querySelector('.vibe-icon-img');
+            if (!iconWrap || !img) return;
+
+            function loadFromGithub() {
+                var paths = (VIBE_ICON_PATHS[repo] || []).concat(GENERIC_ICON_PATHS);
+                var seen = {};
+                paths = paths.filter(function(path) {
+                    if (seen[path]) return false;
+                    seen[path] = true;
+                    return true;
+                });
+
+                function tryNext(index) {
+                    if (index >= paths.length) return;
+                    var url = 'https://raw.githubusercontent.com/yuzhounh/' + repo + '/main/' + paths[index];
+                    setVibeIcon(img, iconWrap, url, function() {
+                        tryNext(index + 1);
+                    });
+                }
+
+                tryNext(0);
+            }
+
+            if (VIBE_EXTERNAL_ICONS[repo]) {
+                setVibeIcon(img, iconWrap, VIBE_EXTERNAL_ICONS[repo], loadFromGithub);
+                return;
+            }
+
+            loadFromGithub();
+        }
+
+        document.querySelectorAll('.vibe-item[data-repo]').forEach(loadVibeIcon);
     })();
     </script>
 </body>

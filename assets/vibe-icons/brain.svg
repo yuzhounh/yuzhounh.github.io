@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="AI Agent Landscape">
+  <defs>
+    <linearGradient id="ail-brain-gradient" gradientUnits="userSpaceOnUse" x1="2" y1="22" x2="22" y2="2">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="48%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(64 64) scale(3.5) translate(-12 -12)" stroke="url(#ail-brain-gradient)" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M12 4.5a3.25 3.25 0 1 0-6.1.14A4.25 4.25 0 0 0 3.2 10.4a4.25 4.25 0 0 0 .59 6.98A4.25 4.25 0 1 0 12 18.5Z"/>
+    <path d="M12 4.5a3.25 3.25 0 1 1 6.1.14A4.25 4.25 0 0 1 20.8 10.4a4.25 4.25 0 0 1-.59 6.98A4.25 4.25 0 1 1 12 18.5Z"/>
+    <path d="M15.2 13.1a4.6 4.6 0 0 1-3.2-4.1 4.6 4.6 0 0 1-3.2 4.1"/>
+    <path d="M17.75 6.2a3.1 3.1 0 0 0 .4-1.42"/>
+    <path d="M5.85 4.78A3.1 3.1 0 0 0 6.25 6.2"/>
+    <path d="M3.2 11.05a4.2 4.2 0 0 1 .62-.42"/>
+    <path d="M20.8 10.63a4.2 4.2 0 0 0-.62-.42"/>
+    <path d="M5.85 18.35a4.2 4.2 0 0 1-2.06-.54"/>
+    <path d="M20.21 17.81a4.2 4.2 0 0 0-2.06-.54"/>
+  </g>
+</svg>

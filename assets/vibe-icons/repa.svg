@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">REPA icon</title>
+  <desc id="desc">A side-view brain connected to a three-stage resting-state fMRI preprocessing pipeline.</desc>
+  <defs>
+    <linearGradient id="repa-brain-gradient" gradientUnits="userSpaceOnUse" x1="14" y1="20" x2="96" y2="72">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="48%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(64 67) scale(1.12) translate(-56.5 -61)">
+    <g transform="translate(0 8)">
+      <path d="M49.6 18.6 Q55.7 18 64.7 19.5 Q73.6 21 80.4 24.5 Q87.2 28 91.1 32.8 Q95 37.5 95.5 42.7 Q96 47.8 93.6 51.9 Q91.2 56 88.5 57.4 Q85.8 58.9 82.8 59.1 Q79.8 59.4 79.1 61.2 Q78.4 63 76.8 64 Q75.3 65 70.4 66 Q65.5 66.9 61.7 65.7 Q57.9 64.6 51.2 73.2 Q44.5 81.9 42.5 82.4 Q40.5 83 40.1 82 Q39.7 81 40.6 78.1 Q41.4 75.3 35 74.2 Q28.5 73.2 26.5 71.2 Q24.5 69.1 24.2 66.3 Q24 63.5 21.5 63.5 Q19 63.5 18.1 62.4 Q17.1 61.4 15.5 58.2 Q14 55 14.5 50 Q15 45 19.6 37.8 Q24.2 30.5 29.3 26.2 Q34.3 21.9 38.9 20.5 Q43.6 19.1 49.6 18.6Z" fill="none" stroke="url(#repa-brain-gradient)" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round" transform="matrix(1.22 0 0 1.23 -11.1 -12.2)"/>
+      <circle cx="66" cy="92" r="4.5" fill="#a855f7"/>
+      <circle cx="78" cy="92" r="4.5" fill="#06b6d4"/>
+      <circle cx="90" cy="92" r="4.5" fill="#f97316"/>
+    </g>
+  </g>
+</svg>
