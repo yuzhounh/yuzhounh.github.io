@@ -1197,6 +1197,7 @@
             activate('home');
         }
 
+        var VIBE_ICONS_VERSION = '20260819';
         var VIBE_EXTERNAL_ICONS = {
             'REPA': 'assets/vibe-icons/repa.png',
             'ai-agent-landscape': 'assets/vibe-icons/ai-agent-landscape.png',
@@ -1277,7 +1278,7 @@
             }
 
             if (VIBE_EXTERNAL_ICONS[repo]) {
-                setVibeIcon(img, iconWrap, VIBE_EXTERNAL_ICONS[repo], loadFromGithub);
+                setVibeIcon(img, iconWrap, VIBE_EXTERNAL_ICONS[repo] + '?v=' + VIBE_ICONS_VERSION, loadFromGithub);
                 return;
             }
 

@@ -19,30 +19,6 @@ const ICONS = [
     ],
   },
   {
-    repo: 'douban-movies-ranking',
-    sources: [
-      'https://www.google.com/s2/favicons?domain=douban.com&sz=128',
-      'https://raw.githubusercontent.com/yuzhounh/douban-movies-ranking/main/public/favicon.png',
-      'https://www.douban.com/favicon.ico',
-    ],
-  },
-  {
-    repo: 'douban-books-ranking',
-    sources: [
-      'https://www.google.com/s2/favicons?domain=douban.com&sz=128',
-      'https://raw.githubusercontent.com/yuzhounh/douban-books-ranking/main/public/favicon.png',
-      'https://www.douban.com/favicon.ico',
-    ],
-  },
-  {
-    repo: 'Tampermonkey-scripts',
-    sources: [
-      'https://www.google.com/s2/favicons?domain=tampermonkey.net&sz=128',
-      'https://raw.githubusercontent.com/yuzhounh/Tampermonkey-scripts/main/favicon.png',
-      'https://www.tampermonkey.net/favicon.ico',
-    ],
-  },
-  {
     repo: 'Open-with-Antigravity',
     sources: [
       'https://www.google.com/s2/favicons?domain=antigravity.google&sz=128',
