@@ -1102,6 +1102,17 @@
                             <a href="https://github.com/yuzhounh/dsh-windows-tray-launcher/releases" class="resource-link-inline" target="_blank">Release</a>
                         </div>
                     </div>
+                    <div class="vibe-item" data-repo="dsh-quota-panel-sidebar" data-static-icon>
+                        <div class="vibe-header">
+                            <div class="vibe-icon"><span class="vibe-icon-letter">￥</span><img class="vibe-icon-img" alt="" hidden></div>
+                            <div class="vibe-title">DSH Quota Panel Sidebar</div>
+                        </div>
+                        <div class="vibe-subtitle">Sidebar quota and balance widget for DeepSeek Harness, with a fold-aware rail control and aligned popover.</div>
+                        <div class="vibe-links">
+                            <a href="https://github.com/yuzhounh/dsh-quota-panel-sidebar" class="resource-link-inline" target="_blank">Code</a>
+                            <a href="https://github.com/yuzhounh/dsh-quota-panel-sidebar/releases" class="resource-link-inline" target="_blank">Release</a>
+                        </div>
+                    </div>
                     <div class="vibe-item" data-repo="Open-with-Antigravity">
                         <div class="vibe-header">
                             <div class="vibe-icon"><span class="vibe-icon-letter">O</span><img class="vibe-icon-img" alt="" hidden></div>
@@ -1285,7 +1296,7 @@
 
         function loadVibeIcon(item) {
             var repo = item.getAttribute('data-repo');
-            if (!repo) return;
+            if (!repo || item.hasAttribute('data-static-icon')) return;
 
             var iconWrap = item.querySelector('.vibe-icon');
             var img = item.querySelector('.vibe-icon-img');
