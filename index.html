@@ -1102,7 +1102,7 @@
                             <a href="https://github.com/yuzhounh/dsh-windows-tray-launcher/releases" class="resource-link-inline" target="_blank">Release</a>
                         </div>
                     </div>
-                    <div class="vibe-item" data-repo="dsh-quota-panel-sidebar" data-static-icon>
+                    <div class="vibe-item" data-repo="dsh-quota-panel-sidebar">
                         <div class="vibe-header">
                             <div class="vibe-icon"><span class="vibe-icon-letter">￥</span><img class="vibe-icon-img" alt="" hidden></div>
                             <div class="vibe-title">DSH Quota Panel Sidebar</div>
@@ -1254,6 +1254,7 @@
             'focus-pace': 'assets/vibe-icons/focus-pace.png',
             'Tampermonkey-scripts': 'assets/vibe-icons/Tampermonkey-scripts.png',
             'dsh-windows-tray-launcher': 'assets/vibe-icons/dsh-windows-tray-launcher.svg',
+            'dsh-quota-panel-sidebar': 'assets/vibe-icons/dsh-quota-panel-sidebar.png',
             'Open-with-Antigravity': 'assets/vibe-icons/Open-with-Antigravity.png',
             'Open-with-Cursor': 'assets/vibe-icons/Open-with-Cursor.png',
             'Open-with-Cursor-by-reg': 'assets/vibe-icons/Open-with-Cursor-by-reg.png',
@@ -1296,7 +1297,7 @@
 
         function loadVibeIcon(item) {
             var repo = item.getAttribute('data-repo');
-            if (!repo || item.hasAttribute('data-static-icon')) return;
+            if (!repo) return;
 
             var iconWrap = item.querySelector('.vibe-icon');
             var img = item.querySelector('.vibe-icon-img');
