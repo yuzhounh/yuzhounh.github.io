@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <style>
         :root {
             --color-bg: #f4f6f9;
@@ -31,6 +40,31 @@
             --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
             --transition: 0.2s ease;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #0b0f19;
+            --color-surface: #131b2e;
+            --color-text: #f1f5f9;
+            --color-text-muted: #94a3b8;
+            --color-text-light: #64748b;
+            --color-accent: #3b82f6;
+            --color-accent-hover: #60a5fa;
+            --color-accent-soft: rgba(59, 130, 246, 0.15);
+            --color-border: #22304d;
+            --color-border-light: #182238;
+            --color-item-bg: #182238;
+            --color-item-border: #22304d;
+            --color-item-hover: #1e2c47;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.45);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        [data-theme="dark"] body {
+            background-image:
+                radial-gradient(ellipse 80% 60% at 10% -10%, rgba(59, 130, 246, 0.12), rgba(11, 15, 25, 0)),
+                radial-gradient(ellipse 60% 50% at 90% 0%, rgba(99, 102, 241, 0.09), rgba(11, 15, 25, 0));
         }
 
         *, *::before, *::after {
@@ -73,13 +107,25 @@
         /* Header */
         .main-header {
             padding: 28px 32px 0;
+        }
+
+        .header-top {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 16px;
         }
 
         .header-text {
             flex: 1;
+            min-width: 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
         }
 
         .main-header h1 {
@@ -97,34 +143,62 @@
             font-weight: 500;
         }
 
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+            background: var(--color-item-bg);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: 0.95rem;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle:hover {
+            background: var(--color-item-hover);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             cursor: pointer;
-            padding: 10px;
+            width: 38px;
+            height: 38px;
+            padding: 0;
             background: var(--color-accent-soft);
-            border: none;
+            border: 1px solid transparent;
             border-radius: var(--radius-sm);
-            transition: background var(--transition);
+            transition: all var(--transition);
+            flex-shrink: 0;
         }
 
         .hamburger:hover {
-            background: #dbeafe;
+            background: var(--color-item-hover);
+            border-color: var(--color-border);
         }
 
         .hamburger span {
             display: block;
-            width: 22px;
+            width: 20px;
             height: 2px;
             background: var(--color-text);
-            margin: 3px 0;
+            margin: 2.5px 0;
             transition: 0.3s;
             border-radius: 2px;
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-4px, 5px);
+            transform: rotate(-45deg) translate(-3px, 4px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -132,7 +206,7 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-4px, -5px);
+            transform: rotate(45deg) translate(-3px, -4px);
         }
 
         /* Tabs */
@@ -162,7 +236,30 @@
 
         .tab-link:hover {
             color: var(--color-text);
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(125, 125, 125, 0.12);
+        }
+
+        [data-theme="dark"] .social-links a[href*="github.com"] i { color: #f1f5f9; }
+        [data-theme="dark"] .fas.fa-envelope { color: #60a5fa; }
+        [data-theme="dark"] .vibe-icon {
+            background: linear-gradient(135deg, #1e293b 0%, #293548 100%);
+            border-color: #334155;
+        }
+        [data-theme="dark"] .resource-link-inline {
+            background: #182238;
+            border-color: #2a3b5c;
+            color: #60a5fa;
+        }
+        [data-theme="dark"] .resource-link-inline:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        [data-theme="dark"] .social-links a:hover,
+        [data-theme="dark"] .vibe-item:hover,
+        [data-theme="dark"] .publication-item:hover,
+        [data-theme="dark"] .patent-item:hover,
+        [data-theme="dark"] .student-card:hover {
+            border-color: #2e436d;
         }
 
         .tab-link.active {
@@ -543,15 +640,16 @@
             }
 
             .main-header {
-                padding: 20px 20px 0;
+                padding: 18px 18px 0;
             }
 
             .main-header h1 {
-                font-size: 1.4rem;
+                font-size: 1.35rem;
             }
 
             .header-subtitle {
                 font-size: 0.82rem;
+                line-height: 1.4;
             }
 
             .hamburger {
@@ -560,35 +658,48 @@
 
             .tabs {
                 display: none;
-                position: absolute;
-                top: 64px;
-                left: 12px;
-                right: 12px;
                 flex-direction: column;
-                margin: 0;
+                margin: 14px 18px 0;
                 padding: 8px;
-                background: var(--color-surface);
+                background: var(--color-item-bg);
                 border-radius: var(--radius-md);
-                box-shadow: var(--shadow-lg);
+                box-shadow: var(--shadow-sm);
                 border: 1px solid var(--color-border);
-                z-index: 1000;
+                gap: 4px;
             }
 
             .tabs.active {
                 display: flex;
+                animation: navSlideDown 0.2s ease-out;
             }
 
-            .container {
-                position: relative;
+            @keyframes navSlideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-6px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
 
             .tab-link {
                 text-align: left;
                 padding: 12px 16px;
+                font-size: 0.92rem;
+                display: flex;
+                align-items: center;
+            }
+
+            .tab-link i {
+                width: 20px;
+                text-align: center;
+                margin-right: 10px;
             }
 
             .tab-content {
-                padding: 20px;
+                padding: 18px 18px 24px;
             }
 
             .social-links {
@@ -625,8 +736,20 @@
                 padding: 8px 8px 20px;
             }
 
+            .main-header {
+                padding: 16px 14px 0;
+            }
+
             .main-header h1 {
                 font-size: 1.25rem;
+            }
+
+            .tabs {
+                margin: 12px 14px 0;
+            }
+
+            .tab-content {
+                padding: 16px 14px 20px;
             }
 
             .social-links {
@@ -644,14 +767,21 @@
     <div class="page-wrapper">
         <div class="container">
             <div class="main-header">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="header-text">
-                    <h1>Jing Wang</h1>
-                    <p class="header-subtitle">Associate Professor · Xinyang Normal University</p>
+                <div class="header-top">
+                    <div class="header-text">
+                        <h1>Jing Wang</h1>
+                        <p class="header-subtitle">Associate Professor · Xinyang Normal University</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="hamburger" id="hamburger" aria-label="Toggle menu" title="Toggle navigation menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -1207,6 +1337,51 @@
         var links = document.querySelectorAll('.tab-link');
         var hamburger = document.getElementById('hamburger');
         var tabs = document.getElementById('tabs');
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        // Theme management
+        function updateThemeUI(isDark) {
+            if (!themeToggleBtn) return;
+            var icon = themeToggleBtn.querySelector('i');
+            if (icon) {
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+            var label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+            themeToggleBtn.setAttribute('aria-label', label);
+            themeToggleBtn.setAttribute('title', label);
+        }
+
+        var isDarkNow = document.documentElement.getAttribute('data-theme') === 'dark';
+        updateThemeUI(isDarkNow);
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                var currentDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                var nextDark = !currentDark;
+                if (nextDark) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                }
+                updateThemeUI(nextDark);
+            });
+        }
+
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        updateThemeUI(true);
+                    } else {
+                        document.documentElement.removeAttribute('data-theme');
+                        updateThemeUI(false);
+                    }
+                }
+            });
+        }
 
         function activate(tabName) {
             links.forEach(function(l) {
@@ -1234,12 +1409,35 @@
         });
 
         if (hamburger) {
-            hamburger.addEventListener('click', toggleMenu);
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
         }
 
+        // Close menu on clicking outside
+        document.addEventListener('click', function(e) {
+            if (tabs && tabs.classList.contains('active')) {
+                if (!tabs.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    tabs.classList.remove('active');
+                }
+            }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && tabs && tabs.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                tabs.classList.remove('active');
+            }
+        });
+
         window.addEventListener('resize', function() {
-            hamburger.classList.remove('active');
-            tabs.classList.remove('active');
+            if (window.innerWidth > 768 && tabs && tabs.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                tabs.classList.remove('active');
+            }
         });
 
         var hash = (location.hash || '').replace('#', '');
