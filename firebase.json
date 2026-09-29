@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "yuzhounh",
+    "public": "dist_pages",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -3,4 +3,5 @@ package-lock.json
 .tmp-vibe-icons/
 dist_pages/
 .wrangler/
+.firebase/
 
