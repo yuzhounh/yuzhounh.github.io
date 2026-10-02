@@ -2,6 +2,7 @@ node_modules/
 package-lock.json
 .tmp-vibe-icons/
 dist_pages/
+.site-build/
 .wrangler/
 .firebase/
 
