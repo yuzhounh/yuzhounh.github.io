@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Day Garden · Three leaves</title>
+  <defs>
+    <style>
+      .garden-leaves { color: #2e6347; }
+      @media (prefers-color-scheme: dark) {
+        .garden-leaves { color: #87b998; }
+      }
+    </style>
+  </defs>
+  <g class="garden-leaves" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 28C28 18 36 8 50 7C51 20 44 30 32 28Z" />
+    <path d="M30 37C31 26 21 20 10 24C12 36 21 42 30 37Z" />
+    <path d="M31 45C32 34 42 29 54 33C51 43 43 50 31 45Z" />
+    <path d="M34 56C28 44 28 31 40 17M30 40C26 33 22 29 18 28M30 48C35 42 40 38 46 37M18 56H46" />
+  </g>
+</svg>
