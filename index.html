@@ -4,11 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jing Wang - Homepage</title>
-    <meta name="description" content="Academic homepage of Jing Wang — Associate Professor at Xinyang Normal University. Research in Parkinson's Disease, Neuroimaging, and Machine Learning.">
+    <meta name="description" content="Homepage of Jing Wang — Associate Professor at Xinyang Normal University. Research in Parkinson's Disease, Neuroimaging, and Machine Learning.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Mobile Drawer Overlay & Panel -->
+    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+    <aside class="drawer-panel" id="drawer-panel" aria-label="Mobile Navigation" aria-hidden="true">
+        <div class="drawer-header">
+            <div class="drawer-brand">
+                <span class="drawer-brand-name">Jing Wang</span>
+                <span class="drawer-brand-badge">Homepage</span>
+            </div>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu" title="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <button class="drawer-nav-item active" data-tab="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="drawer-nav-item" data-tab="publication">
+                <i class="fas fa-file-alt"></i>
+                <span>Publications</span>
+            </button>
+            <button class="drawer-nav-item" data-tab="vibes">
+                <i class="fas fa-bolt"></i>
+                <span>Vibes</span>
+            </button>
+        </nav>
+        <div class="drawer-footer">
+            <div class="drawer-theme-row">
+                <span class="drawer-theme-label">Theme</span>
+                <button class="theme-toggle" id="drawer-theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
     <script>
         (function() {
             var savedTheme = localStorage.getItem('theme');
@@ -147,9 +183,9 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: var(--radius-sm);
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
             border: 1px solid var(--color-border);
             background: var(--color-item-bg);
             color: var(--color-text-muted);
@@ -172,41 +208,196 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             padding: 0;
-            background: var(--color-accent-soft);
-            border: 1px solid transparent;
-            border-radius: var(--radius-sm);
+            background: var(--color-item-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 9999px;
             transition: all var(--transition);
             flex-shrink: 0;
+            gap: 4px;
         }
 
         .hamburger:hover {
             background: var(--color-item-hover);
-            border-color: var(--color-border);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
         }
 
         .hamburger span {
             display: block;
-            width: 20px;
+            width: 18px;
             height: 2px;
             background: var(--color-text);
-            margin: 2.5px 0;
-            transition: 0.3s;
+            transition: 0.25s ease;
             border-radius: 2px;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-3px, 4px);
-        }
-
-        .hamburger.active span:nth-child(2) {
+        /* Slide-out Drawer */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 999;
             opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
         }
 
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-3px, -4px);
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(72vw, 248px);
+            background: var(--color-surface);
+            border-left: 1px solid var(--color-border);
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .drawer-panel.active {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 16px 14px;
+            border-bottom: 1px solid var(--color-border);
+            flex-shrink: 0;
+        }
+
+        .drawer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .drawer-brand-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+        }
+
+        .drawer-brand-tag {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .drawer-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            border: 1px solid var(--color-border);
+            background: var(--color-item-bg);
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all var(--transition);
+            flex-shrink: 0;
+            padding: 0;
+        }
+
+        .drawer-close:hover {
+            background: var(--color-item-hover);
+            color: var(--color-text);
+            border-color: var(--color-accent);
+        }
+
+        .drawer-close svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .drawer-nav {
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .drawer-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 11px 14px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: inherit;
+        }
+
+        .drawer-nav-item i {
+            width: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .drawer-nav-item:hover {
+            background: var(--color-item-hover);
+            color: var(--color-text);
+        }
+
+        .drawer-nav-item.active {
+            background: var(--color-accent-soft);
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .drawer-footer {
+            padding: 14px 16px;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-item-bg);
+            flex-shrink: 0;
+        }
+
+        .drawer-theme-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .drawer-theme-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+        }
+
+        @media (min-width: 769px) {
+            .drawer-overlay,
+            .drawer-panel {
+                display: none !important;
+            }
         }
 
         /* Tabs */
@@ -237,11 +428,6 @@
         .tab-link:hover {
             color: var(--color-text);
             background: rgba(125, 125, 125, 0.12);
-        }
-
-        .tab-link:focus-visible {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 2px;
         }
 
         [data-theme="dark"] .social-links a[href*="github.com"] i { color: #f1f5f9; }
@@ -673,45 +859,7 @@
             }
 
             .tabs {
-                display: none;
-                flex-direction: column;
-                margin: 14px 18px 0;
-                padding: 8px;
-                background: var(--color-item-bg);
-                border-radius: var(--radius-md);
-                box-shadow: var(--shadow-sm);
-                border: 1px solid var(--color-border);
-                gap: 4px;
-            }
-
-            .tabs.active {
-                display: flex;
-                animation: navSlideDown 0.2s ease-out;
-            }
-
-            @keyframes navSlideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-6px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .tab-link {
-                text-align: left;
-                padding: 12px 16px;
-                font-size: 0.92rem;
-                display: flex;
-                align-items: center;
-            }
-
-            .tab-link i {
-                width: 20px;
-                text-align: center;
-                margin-right: 10px;
+                display: none !important;
             }
 
             .tab-content {
@@ -744,13 +892,6 @@
             .publication-title,
             .patent-title {
                 font-size: 0.9rem;
-            }
-        }
-
-        /* Tablet touch viewports retain the desktop card wall in either orientation. */
-        @media (min-width: 744px) and (min-height: 600px) and (pointer: coarse) {
-            .vibe-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -1383,6 +1524,42 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile Drawer Overlay & Panel -->
+    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+    <aside class="drawer-panel" id="drawer-panel" aria-label="Mobile Navigation" aria-hidden="true">
+        <div class="drawer-header">
+            <div class="drawer-brand">
+                <span class="drawer-brand-name">Jing Wang</span>
+                <span class="drawer-brand-badge">Homepage</span>
+            </div>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu" title="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <button class="drawer-nav-item active" data-tab="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="drawer-nav-item" data-tab="publication">
+                <i class="fas fa-file-alt"></i>
+                <span>Publications</span>
+            </button>
+            <button class="drawer-nav-item" data-tab="vibes">
+                <i class="fas fa-bolt"></i>
+                <span>Vibes</span>
+            </button>
+        </nav>
+        <div class="drawer-footer">
+            <div class="drawer-theme-row">
+                <span class="drawer-theme-label">Theme</span>
+                <button class="theme-toggle" id="drawer-theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
 
     <script>
     (function() {
