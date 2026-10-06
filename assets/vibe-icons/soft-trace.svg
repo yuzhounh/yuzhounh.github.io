@@ -2,7 +2,8 @@
   <path d="M25 4h14" fill="none" stroke="#8f6cf0" stroke-width="6" stroke-linecap="round"/>
   <path d="M32 6v8" fill="none" stroke="#e46c54" stroke-width="5" stroke-linecap="round"/>
   <path d="M49 17l4-4" fill="none" stroke="#3cb4a0" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="32" cy="38" r="20.5" fill="#fafafa"/>
+  <circle cx="32" cy="38" r="20.5" fill="#e4e7ec"/>
+  <circle cx="32" cy="38" r="17" fill="#ffffff"/>
   <path d="M32.64 15.01A23 23 0 0 1 45.71 56.46" fill="none" stroke="#5b88df" stroke-width="5"/>
   <path d="M44.66 57.20A23 23 0 0 1 11.09 47.57" fill="none" stroke="#d96989" stroke-width="5"/>
   <path d="M10.59 46.39A23 23 0 0 1 12.37 26.02" fill="none" stroke="#48a892" stroke-width="5"/>
