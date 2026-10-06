@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Soft Trace">
+  <path d="M25 4h14" fill="none" stroke="#8f6cf0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M32 6v8" fill="none" stroke="#e46c54" stroke-width="5" stroke-linecap="round"/>
+  <path d="M49 17l4-4" fill="none" stroke="#3cb4a0" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="32" cy="38" r="20.5" fill="#fafafa"/>
+  <path d="M32.64 15.01A23 23 0 0 1 45.71 56.46" fill="none" stroke="#5b88df" stroke-width="5"/>
+  <path d="M44.66 57.20A23 23 0 0 1 11.09 47.57" fill="none" stroke="#d96989" stroke-width="5"/>
+  <path d="M10.59 46.39A23 23 0 0 1 12.37 26.02" fill="none" stroke="#48a892" stroke-width="5"/>
+  <path d="M13.07 24.94A23 23 0 0 1 31.36 15.01" fill="none" stroke="#df984a" stroke-width="5"/>
+  <path d="M32 23v15l10 6" fill="none" stroke="#1a2336" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="38" r="3.5" fill="#f0b840"/>
+</svg>
