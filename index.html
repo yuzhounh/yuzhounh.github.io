@@ -9,42 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Mobile Drawer Overlay & Panel -->
-    <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
-    <aside class="drawer-panel" id="drawer-panel" aria-label="Mobile Navigation" aria-hidden="true">
-        <div class="drawer-header">
-            <div class="drawer-brand">
-                <span class="drawer-brand-name">Jing Wang</span>
-                <span class="drawer-brand-badge">Homepage</span>
-            </div>
-            <button class="drawer-close" id="drawer-close" aria-label="Close menu" title="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="drawer-nav">
-            <button class="drawer-nav-item active" data-tab="home">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </button>
-            <button class="drawer-nav-item" data-tab="publication">
-                <i class="fas fa-file-alt"></i>
-                <span>Publications</span>
-            </button>
-            <button class="drawer-nav-item" data-tab="vibes">
-                <i class="fas fa-bolt"></i>
-                <span>Vibes</span>
-            </button>
-        </nav>
-        <div class="drawer-footer">
-            <div class="drawer-theme-row">
-                <span class="drawer-theme-label">Theme</span>
-                <button class="theme-toggle" id="drawer-theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-        </div>
-    </aside>
-
     <script>
         (function() {
             var savedTheme = localStorage.getItem('theme');
@@ -854,6 +818,10 @@
                 line-height: 1.4;
             }
 
+            .header-actions .theme-toggle {
+                display: none !important;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -1567,35 +1535,47 @@
         var hamburger = document.getElementById('hamburger');
         var tabs = document.getElementById('tabs');
         var themeToggleBtn = document.getElementById('theme-toggle');
+        var drawerOverlay = document.getElementById('drawer-overlay');
+        var drawerPanel = document.getElementById('drawer-panel');
+        var drawerClose = document.getElementById('drawer-close');
+        var drawerItems = document.querySelectorAll('.drawer-nav-item');
+        var drawerThemeToggle = document.getElementById('drawer-theme-toggle');
 
         // Theme management
         function updateThemeUI(isDark) {
-            if (!themeToggleBtn) return;
-            var icon = themeToggleBtn.querySelector('i');
-            if (icon) {
-                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-            }
-            var label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
-            themeToggleBtn.setAttribute('aria-label', label);
-            themeToggleBtn.setAttribute('title', label);
+            [themeToggleBtn, drawerThemeToggle].forEach(function(btn) {
+                if (!btn) return;
+                var icon = btn.querySelector('i');
+                if (icon) {
+                    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                }
+                var label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+                btn.setAttribute('aria-label', label);
+                btn.setAttribute('title', label);
+            });
         }
 
         var isDarkNow = document.documentElement.getAttribute('data-theme') === 'dark';
         updateThemeUI(isDarkNow);
 
+        function toggleTheme() {
+            var currentDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            var nextDark = !currentDark;
+            if (nextDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+            updateThemeUI(nextDark);
+        }
+
         if (themeToggleBtn) {
-            themeToggleBtn.addEventListener('click', function() {
-                var currentDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                var nextDark = !currentDark;
-                if (nextDark) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.documentElement.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                }
-                updateThemeUI(nextDark);
-            });
+            themeToggleBtn.addEventListener('click', toggleTheme);
+        }
+        if (drawerThemeToggle) {
+            drawerThemeToggle.addEventListener('click', toggleTheme);
         }
 
         if (window.matchMedia) {
@@ -1619,14 +1599,44 @@
                 l.setAttribute('aria-selected', String(selected));
                 l.tabIndex = selected ? 0 : -1;
             });
+            drawerItems.forEach(function(d) {
+                var selected = d.getAttribute('data-tab') === tabName;
+                d.classList.toggle('active', selected);
+                d.setAttribute('aria-selected', String(selected));
+            });
             document.querySelectorAll('.tab-content').forEach(function(c) {
                 c.classList.toggle('active', c.id === 'tab-' + tabName);
             });
         }
 
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            tabs.classList.toggle('active');
+        function openDrawer() {
+            if (drawerOverlay) {
+                drawerOverlay.classList.add('active');
+                drawerOverlay.setAttribute('aria-hidden', 'false');
+            }
+            if (drawerPanel) {
+                drawerPanel.classList.add('active');
+                drawerPanel.setAttribute('aria-hidden', 'false');
+            }
+            if (hamburger) {
+                hamburger.classList.add('active');
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            if (drawerOverlay) {
+                drawerOverlay.classList.remove('active');
+                drawerOverlay.setAttribute('aria-hidden', 'true');
+            }
+            if (drawerPanel) {
+                drawerPanel.classList.remove('active');
+                drawerPanel.setAttribute('aria-hidden', 'true');
+            }
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+            document.body.style.overflow = '';
         }
 
         links.forEach(function(link) {
@@ -1646,40 +1656,55 @@
                 if (history && history.replaceState) {
                     history.replaceState(null, '', '#' + this.getAttribute('data-tab'));
                 }
-                hamburger.classList.remove('active');
-                tabs.classList.remove('active');
+                closeDrawer();
             });
         });
 
         if (hamburger) {
             hamburger.addEventListener('click', function(e) {
                 e.stopPropagation();
-                toggleMenu();
+                if (drawerPanel && drawerPanel.classList.contains('active')) {
+                    closeDrawer();
+                } else {
+                    openDrawer();
+                }
             });
         }
 
-        // Close menu on clicking outside
-        document.addEventListener('click', function(e) {
-            if (tabs && tabs.classList.contains('active')) {
-                if (!tabs.contains(e.target) && !hamburger.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    tabs.classList.remove('active');
+        if (drawerClose) {
+            drawerClose.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeDrawer();
+            });
+        }
+
+        if (drawerOverlay) {
+            drawerOverlay.addEventListener('click', function() {
+                closeDrawer();
+            });
+        }
+
+        drawerItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var tab = this.getAttribute('data-tab');
+                activate(tab);
+                if (history && history.replaceState) {
+                    history.replaceState(null, '', '#' + tab);
                 }
-            }
+                closeDrawer();
+            });
         });
 
         // Close menu on Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && tabs && tabs.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                tabs.classList.remove('active');
+            if (e.key === 'Escape' && drawerPanel && drawerPanel.classList.contains('active')) {
+                closeDrawer();
             }
         });
 
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && tabs && tabs.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                tabs.classList.remove('active');
+            if (window.innerWidth > 768 && drawerPanel && drawerPanel.classList.contains('active')) {
+                closeDrawer();
             }
         });
 
