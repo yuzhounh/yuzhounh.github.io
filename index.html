@@ -637,25 +637,45 @@
             margin-bottom: 2px;
         }
 
-        .publication-venue,
-        .patent-info {
-            font-style: italic;
-            color: var(--color-text-light);
+        .publication-venue {
+            font-style: normal;
+            color: var(--color-text-muted);
             font-size: 0.85rem;
             margin-bottom: 6px;
         }
 
-        .publication-dates {
+        .patent-info {
+            font-style: normal;
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+
+        .patent-details {
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            overflow-wrap: anywhere;
+        }
+
+        .publication-dates,
+        .patent-dates {
             display: flex;
             flex-wrap: wrap;
             column-gap: 12px;
             row-gap: 2px;
-            color: var(--color-text-muted);
+            color: #6b7280;
             font-size: 0.8rem;
             margin-bottom: 6px;
         }
 
-        .publication-dates span {
+        [data-theme="dark"] .publication-dates,
+        [data-theme="dark"] .patent-dates {
+            color: #8b9aae;
+        }
+
+        .publication-dates span,
+        .patent-dates span {
             white-space: nowrap;
         }
 
@@ -935,7 +955,7 @@
 
             <div class="tabs" id="tabs" role="tablist" aria-label="Homepage sections">
                 <button type="button" class="tab-link active" id="nav-home" data-tab="home" role="tab" aria-controls="tab-home" aria-selected="true"><i class="fas fa-home" aria-hidden="true"></i> Home</button>
-                <button type="button" class="tab-link" id="nav-publication" data-tab="publication" role="tab" aria-controls="tab-publication" aria-selected="false" tabindex="-1"><i class="fas fa-file-alt" aria-hidden="true"></i> Publications</button>
+                <button type="button" class="tab-link" id="nav-publications" data-tab="publications" role="tab" aria-controls="tab-publications" aria-selected="false" tabindex="-1"><i class="fas fa-file-alt" aria-hidden="true"></i> Publications</button>
                 <button type="button" class="tab-link" id="nav-vibes" data-tab="vibes" role="tab" aria-controls="tab-vibes" aria-selected="false" tabindex="-1"><i class="fas fa-bolt" aria-hidden="true"></i> Vibes</button>
             </div>
 
@@ -1009,7 +1029,7 @@
                 </section>
             </div>
 
-            <div id="tab-publication" class="tab-content" role="tabpanel" aria-labelledby="nav-publication">
+            <div id="tab-publications" class="tab-content" role="tabpanel" aria-labelledby="nav-publications">
                 <section>
                     <h2>Publications</h2>
 
@@ -1017,7 +1037,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2025.1687925/full" target="_blank">Diagnostic classification of mild cognitive impairment in Parkinson's disease using subject-level stratified machine-learning analysis</a></div>
                         <div class="publication-authors">Jing Wang, Yanfang Chen, Xiao Xie, Pengwei Wang, Hang Hu, Hongfang Han, Lihan Wang, Li Zhang</div>
-                        <div class="publication-venue">Frontiers in Aging Neuroscience 17 (2025): 1687925</div>
+                        <div class="publication-venue">Frontiers in Aging Neuroscience, 2025, 17: 1687925.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2025-10-22">2025-10-22</time></span>
                         </div>
@@ -1028,7 +1048,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.2097-583X.2025.03.007" target="_blank">基于贝叶斯优化的支持向量回归预测帕金森病严重程度研究</a></div>
                         <div class="publication-authors">Jing Wang, Pengwei Wang, Xiao Xie, Hongfang Han</div>
-                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 38, no. 3 (2025): 297-303. (in Chinese)</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition), 2025, 38(3): 297-303. (in Chinese)</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2025-07-10">2025-07-10</time></span>
                             <span>Online: <time datetime="2025-07-05">2025-07-05</time></span>
@@ -1039,7 +1059,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.mdpi.com/2073-8994/17/2/151" target="_blank">Incorporating symmetric smooth regularizations into sparse logistic regression for classification and feature extraction</a></div>
                         <div class="publication-authors">Jing Wang, Xiao Xie, Pengwei Wang, Jian Sun, Yaochen Liu, Li Zhang</div>
-                        <div class="publication-venue">Symmetry 17, no. 2 (2025): 151</div>
+                        <div class="publication-venue">Symmetry, 2025, 17(2): 151.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2025-01-21">2025-01-21</time></span>
                         </div>
@@ -1049,7 +1069,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323281" target="_blank">Robust sparse smooth principal component analysis for face reconstruction and recognition</a></div>
                         <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Jian Li, Hao Cai, Yan Feng</div>
-                        <div class="publication-venue">PLoS One 20, no. 5 (2025): e0323281</div>
+                        <div class="publication-venue">PLOS ONE, 2025, 20(5): e0323281.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2025-05-27">2025-05-27</time></span>
                         </div>
@@ -1060,7 +1080,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.liebertpub.com/doi/abs/10.1089/brain.2024.0032" target="_blank">Frontal Cortex Acts as Causality Transition Hub from Mirror Network to Mentalizing Network During Action Intention Understanding</a></div>
                         <div class="publication-authors">Li Zhang, Lei Zhang, Jing Wang, Yanmei Zhu</div>
-                        <div class="publication-venue">Brain Connectivity 15, no. 1 (2025): 3-18</div>
+                        <div class="publication-venue">Brain Connectivity, 2025, 15(1): 3-18.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2025-02">2025-02</time></span>
                             <span>Online: <time datetime="2024-11-27">2024-11-27</time></span>
@@ -1072,7 +1092,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.iaeng.org/IJCS/issues_v51/issue_2/IJCS_51_2_05.pdf" target="_blank">Generalized Representation-based Classification by Lp-norm for Face Recognition</a></div>
                         <div class="publication-authors">Jing Wang, Xiao Xie, Li Zhang, Xusheng Chen, Hongzhou Yue, Huaping Guo</div>
-                        <div class="publication-venue">IAENG International Journal of Computer Science 51, no. 2 (2024): 104-114</div>
+                        <div class="publication-venue">IAENG International Journal of Computer Science, 2024, 51(2): 104-114.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2024-02">2024-02</time></span>
                             <span>Online: <time datetime="2024-02-01">2024-02-01</time></span>
@@ -1085,9 +1105,9 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-981-99-1642-9_30" target="_blank">Causal Connectivity Transition from Action Observation to Mentalizing Network for Understanding Other's Action Intention</a></div>
                         <div class="publication-authors">Li Zhang, Jing Wang, Yanmei Zhu</div>
-                        <div class="publication-venue">In International Conference on Neural Information Processing (ICONIP 2022), CCIS 1792, pp. 350-360. Singapore: Springer Nature Singapore, 2023</div>
+                        <div class="publication-venue">International Conference on Neural Information Processing (ICONIP 2022), Proceedings, Part V (CCIS 1792). Singapore: Springer Nature Singapore, 2023: 350-360.</div>
                         <div class="publication-dates">
-                            <span>Published: 2023</span>
+                            <span>Published: <time datetime="2023-04-15">2023-04-15</time></span>
                             <span>Online: <time datetime="2023-04-14">2023-04-14</time></span>
                         </div>
                         <a href="PDF/zhang2023causal.pdf" class="resource-link-inline" target="_blank">PDF</a>
@@ -1097,7 +1117,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/24/12913" target="_blank">Fusion of bilateral 2DPCA information for image reconstruction and recognition</a></div>
                         <div class="publication-authors">Jing Wang, Mengli Zhao, Xiao Xie, Li Zhang, Wenbo Zhu</div>
-                        <div class="publication-venue">Applied Sciences 12, no. 24 (2022): 12913</div>
+                        <div class="publication-venue">Applied Sciences, 2022, 12(24): 12913.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2022-12-15">2022-12-15</time></span>
                         </div>
@@ -1107,7 +1127,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.mdpi.com/2076-3417/12/23/11967" target="_blank">A nested u-shaped residual codec network for strip steel defect detection</a></div>
                         <div class="publication-authors">Huaping Guo, Shanggui Zhan, Li Zhang, Wenbo Zhu, Yange Sun, Jing Wang</div>
-                        <div class="publication-venue">Applied Sciences 12, no. 23 (2022): 11967</div>
+                        <div class="publication-venue">Applied Sciences, 2022, 12(23): 11967.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2022-11-23">2022-11-23</time></span>
                         </div>
@@ -1116,27 +1136,29 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2022.03.024" target="_blank">基于广义稀疏逻辑回归的全脑分类</a></div>
                         <div class="publication-authors">Jing Wang, Bao Zhang, Xiao Xie, Jian Li, Li Zhang, Huaping Guo</div>
-                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 35, no. 3 (2022): 488-493. (in Chinese)</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition), 2022, 35(3): 488-493. (in Chinese)</div>
                         <div class="publication-dates">
-                            <span>Published: 2022</span>
+                            <span>Published: <time datetime="2022-07-10">2022-07-10</time></span>
+                            <span>Online: <time datetime="2022-07-18">2022-07-18</time></span>
                         </div>
                         <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2022.03.024.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0JLxj7LQJ-QOAahlFpQDnSnlJkDPEDQJLWH1blMIwUtRXMWQt-A5dRfyFnzUT3gyTKR5jVjyxw4Ne0-ZLEiYHXb_aKeWQipXucooThLB1HvYeG5-VhEz8t6NbwABxyrJTOQWNrpMCl57Dom-Byf14IR5pEfNx39nnx4Vem3CGb_ng==&uniplatform=NZKPT&language=CHS" target="_blank">新工科背景下人工智能课程的教学改革</a></div>
                         <div class="publication-authors">Yan Feng, Lei You, Jian Li, Jing Wang</div>
-                        <div class="publication-venue">Fujian Computer 38, no. 4 (2022): 118-120. (in Chinese)</div>
+                        <div class="publication-venue">Fujian Computer, 2022, 38(4): 118-120. (in Chinese)</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2022-04">2022-04</time></span>
+                            <span>Online: <time datetime="2022-04-13">2022-04-13</time></span>
                         </div>
                         <a href="PDF/feng2022teaching.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://crad.ict.ac.cn/cn/article/doi/10.7544/issn1000-1239.20200779" target="_blank">基于抖音共同联系人的群体用户关系分析</a></div>
                         <div class="publication-authors">Hongzhou Le, Shuilong He, Jing Wang</div>
-                        <div class="publication-venue">Computer Research and Development 59, no. 4 (2022): 796-812. (in Chinese)</div>
+                        <div class="publication-venue">Computer Research and Development, 2022, 59(4): 796-812. (in Chinese)</div>
                         <div class="publication-dates">
-                            <span>Published: <time datetime="2022-04">2022-04</time></span>
+                            <span>Published: <time datetime="2022-04-01">2022-04-01</time></span>
                             <span>Online: <time datetime="2021-06-01">2021-06-01</time></span>
                         </div>
                         <a href="PDF/yue2022analysis.pdf" class="resource-link-inline" target="_blank">PDF</a>
@@ -1146,25 +1168,27 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/9642176" target="_blank">Robot manipulator control via solving four-layered time-variant equations including linear, nonlinear equalities and inequalities</a></div>
                         <div class="publication-authors">Xinhui Zhu, Li Zhang, Yang Shi, Jing Wang, Jian Li</div>
-                        <div class="publication-venue">In International Conference on Intelligent Control and Information Processing (ICICIP), pp. 416-421. IEEE, 2021</div>
+                        <div class="publication-venue">International Conference on Intelligent Control and Information Processing (ICICIP 2021). IEEE, 2021: 416-421.</div>
                         <div class="publication-dates">
-                            <span>Published: 2021</span>
+                            <span>Published: <time datetime="2021-12">2021-12</time></span>
+                            <span>Online: <time datetime="2021-12-16">2021-12-16</time></span>
                         </div>
                         <a href="PDF/zhu2021robot.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                     <div class="publication-item">
                         <div class="publication-title"><a href="http://journal.xynu.edu.cn/article/doi/10.3969/j.issn.1003-0972.2021.04.024" target="_blank">面向人群计数的对偶卷积神经网络</a></div>
                         <div class="publication-authors">Huaping Guo, Rui Wang, Jing Wang, Yange Sun, Jian Li, Meng Li</div>
-                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition) 34, no. 4 (2021): 650-654. (in Chinese)</div>
+                        <div class="publication-venue">Journal of Xinyang Normal University (Natural Science Edition), 2021, 34(4): 650-654. (in Chinese)</div>
                         <div class="publication-dates">
-                            <span>Published: 2021</span>
+                            <span>Published: <time datetime="2021-10-10">2021-10-10</time></span>
+                            <span>Online: <time datetime="2021-10-20">2021-10-20</time></span>
                         </div>
                         <a href="http://journal.xynu.edu.cn/cn/article/pdf/preview/10.3969/j.issn.1003-0972.2021.04.024.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0307904X2100144X" target="_blank">Real-time robot manipulator tracking control as multilayered time-varying problem</a></div>
                         <div class="publication-authors">Jian Li, Xinhui Zhu, Yang Shi, Jing Wang, Huaping Guo</div>
-                        <div class="publication-venue">Applied Mathematical Modelling 96 (2021): 355-366</div>
+                        <div class="publication-venue">Applied Mathematical Modelling, 2021, 96: 355-366.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2021-08">2021-08</time></span>
                             <span>Online: <time datetime="2021-03-17">2021-03-17</time></span>
@@ -1176,7 +1200,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.25035" target="_blank">EEG source‐space synchrostate transitions and Markov modeling in the math‐gifted brain during a long‐chain reasoning task</a></div>
                         <div class="publication-authors">Li Zhang, John Q. Gan, Yanmei Zhu, Jing Wang, Haixian Wang</div>
-                        <div class="publication-venue">Human brain mapping 41, no. 13 (2020): 3620-3636</div>
+                        <div class="publication-venue">Human Brain Mapping, 2020, 41(13): 3620-3636.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2020-09">2020-09</time></span>
                             <span>Online: <time datetime="2020-05-29">2020-05-29</time></span>
@@ -1190,14 +1214,15 @@
                         <div class="publication-authors">Jing Wang</div>
                         <div class="publication-venue">Southeast University, Ph.D. Thesis, 2018. (in Chinese)</div>
                         <div class="publication-dates">
-                            <span>Published: 2018</span>
+                            <span>Published: <time datetime="2018-09">2018-09</time></span>
+                            <span>Online: <time datetime="2019-04-16">2019-04-16</time></span>
                         </div>
                         <a href="PDF/wang2018thesis.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2018.00166/full" target="_blank">Generation of individual whole-brain atlases with resting-state fMRI data using simultaneous graph computation and parcellation</a></div>
                         <div class="publication-authors">Jing Wang, Zhifeng Hao, Haixian Wang</div>
-                        <div class="publication-venue">Frontiers in human neuroscience 12 (2018): 166</div>
+                        <div class="publication-venue">Frontiers in Human Neuroscience, 2018, 12: 166.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2018-05-04">2018-05-04</time></span>
                         </div>
@@ -1210,7 +1235,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2016.00659/full" target="_blank">A supervoxel-based method for groupwise whole brain parcellation with resting-state fMRI data</a></div>
                         <div class="publication-authors">Jing Wang, Haixian Wang</div>
-                        <div class="publication-venue">Frontiers in human neuroscience 10 (2016): 659</div>
+                        <div class="publication-venue">Frontiers in Human Neuroscience, 2016, 10: 659.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2016-12-27">2016-12-27</time></span>
                         </div>
@@ -1221,9 +1246,9 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-3-319-46675-0_15" target="_blank">Parcellating whole brain for individuals by simple linear iterative clustering</a></div>
                         <div class="publication-authors">Jing Wang, Zilan Hu, Haixian Wang</div>
-                        <div class="publication-venue">In International Conference on Neural Information Processing 9949, pp. 131-139. Cham: Springer International Publishing, 2016</div>
+                        <div class="publication-venue">International Conference on Neural Information Processing (ICONIP 2016), Proceedings, Part III (LNCS 9949). Cham: Springer International Publishing, 2016: 131-139.</div>
                         <div class="publication-dates">
-                            <span>Published: 2016</span>
+                            <span>Published: <time datetime="2016-09-29">2016-09-29</time></span>
                             <span>Online: <time datetime="2016-09-29">2016-09-29</time></span>
                         </div>
                         <a href="PDF/wang2016parcellating.pdf" class="resource-link-inline" target="_blank">PDF</a>
@@ -1232,7 +1257,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://ieeexplore.ieee.org/document/7087369" target="_blank">Generalized 2-D principal component analysis by Lp-norm for image analysis</a></div>
                         <div class="publication-authors">Jing Wang</div>
-                        <div class="publication-venue">IEEE Transactions on Cybernetics 46, no. 3 (2016): 792-803</div>
+                        <div class="publication-venue">IEEE Transactions on Cybernetics, 2016, 46(3): 792-803.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2016-03">2016-03</time></span>
                             <span>Online: <time datetime="2015-04-16">2015-04-16</time></span>
@@ -1245,7 +1270,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1746809412001334" target="_blank">L1-norm based discriminative spatial pattern for single-trial EEG classification</a></div>
                         <div class="publication-authors">Qin Tang, Jing Wang, Haixian Wang</div>
-                        <div class="publication-venue">Biomedical Signal Processing and Control 10 (2014): 313-321</div>
+                        <div class="publication-venue">Biomedical Signal Processing and Control, 2014, 10: 313-321.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2014-03">2014-03</time></span>
                             <span>Online: <time datetime="2013-01-14">2013-01-14</time></span>
@@ -1257,7 +1282,7 @@
                     <div class="publication-item">
                         <div class="publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0893608013001640" target="_blank">2DPCA with L1-norm for simultaneously robust and sparse modelling</a></div>
                         <div class="publication-authors">Haixian Wang, Jing Wang</div>
-                        <div class="publication-venue">Neural Networks 46 (2013): 190-198</div>
+                        <div class="publication-venue">Neural Networks, 2013, 46: 190-198.</div>
                         <div class="publication-dates">
                             <span>Published: <time datetime="2013-10">2013-10</time></span>
                             <span>Online: <time datetime="2013-06-10">2013-06-10</time></span>
@@ -1274,28 +1299,60 @@
                     <div class="patent-item">
                         <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0KZSr1UdG5GDxIcBZhxsqsQkR469q25B0gm-Vw1nOu2ADhqPGnyyBixjVtqAG7xBi7EC18MTSuuoPLHDD1Bwu4ocSy7iRQJPHcLp5MMGKJBR27s_lqsNLNkTTOsiIl9u-HMxqkgjdEphH7hL1hVWb_SDfqRBMuC0UJi2Rkj1wTs1A==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于鲁棒稀疏平滑主成分分析的人脸识别和重建方法及系统</a></div>
                         <div class="patent-inventors">Jing Wang, Xiao Xie, Li Zhang</div>
-                        <div class="patent-info">China: CN116052243A. 2023. (in Chinese)</div>
+                        <div class="patent-info">China: CN116052243A, 2023-05-02. (in Chinese)</div>
+                        <div class="patent-details">
+                            <div>Type: Invention application publication</div>
+                            <div>Application No.: CN202211497782.5</div>
+                        </div>
+                        <div class="patent-dates">
+                            <span>Filed: <time datetime="2022-11-25">2022-11-25</time></span>
+                            <span>Published: <time datetime="2023-05-02">2023-05-02</time></span>
+                        </div>
                         <a href="PDF/wang2023patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
 
                     <div class="patent-item">
                         <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0Kz8eZjNGxLelf_wEAfWKTwzCULw2jOdwiULclsNB3nc1TpdHbyUglan-75LO0uKd0EKAuqqwmWOBd9dZExVqrUZL7zcIV-jTkzoaHIIVcnt0ezdxn5SJFyfqh9-20xxkVufCy1bvAX23ANhkF4rbl5_-hJ_kQzh0MxaYJ1nbaLLA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于多层结构的冗余度机械臂多任务控制方法</a></div>
                         <div class="patent-inventors">Jian Li, Xinhui Zhu, Yange Sun, Li Zhang, Jing Wang</div>
-                        <div class="patent-info">China: CN113084803B. 2022. (in Chinese)</div>
+                        <div class="patent-info">China: CN113084803B, 2022-04-22. (in Chinese)</div>
+                        <div class="patent-details">
+                            <div>Type: Granted invention patent</div>
+                            <div>Application No.: CN202110349034.1</div>
+                        </div>
+                        <div class="patent-dates">
+                            <span>Filed: <time datetime="2021-03-31">2021-03-31</time></span>
+                            <span>Granted: <time datetime="2022-04-22">2022-04-22</time></span>
+                        </div>
                         <a href="PDF/li2022patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
 
                     <div class="patent-item">
                         <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0L2rZ6xxYqtHnghWgR3aXebIDwMyFPW3o68-bwpMfusa_rZcSrskLAQwHXE4wIMhYCugy6hinLUIf75jC08gVIPTZLwR2w6TjKuce7HTnztiVUzm7NZ9WhNKcLOcK1sKYGQUyCVyhBGyYKJWGAcQcEHJbVBKjppLsu0ntjSvAx1uA==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于广义表示的人脸图像分类方法</a></div>
                         <div class="patent-inventors">Jing Wang, Bao Zhang, Jian Li, Hejun Xuan, Yange Sun, Huaping Guo</div>
-                        <div class="patent-info">China: CN111931595B. 2022. (in Chinese)</div>
+                        <div class="patent-info">China: CN111931595B, 2022-05-24. (in Chinese)</div>
+                        <div class="patent-details">
+                            <div>Type: Granted invention patent</div>
+                            <div>Application No.: CN202010689694.X</div>
+                        </div>
+                        <div class="patent-dates">
+                            <span>Filed: <time datetime="2020-07-17">2020-07-17</time></span>
+                            <span>Granted: <time datetime="2022-05-24">2022-05-24</time></span>
+                        </div>
                         <a href="PDF/wang2022patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
 
                     <div class="patent-item">
                         <div class="patent-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=uFh1Y7sXU0LTvcae2EYR--f3PQNYyrJlfQaFMdnahkg-S4OsuVh62SCm5HrQ066cK_Xl2S54TId2KCo7spgJeFZnEavcHvN2GWGxaMzotfwEbd7Bs5JAtPSxm6_kpXwdAxbIev1zx6qRQ299jtSVtkt3ya6MGA4I-oK2W7DOUrTzl-o9hUdX7Q==&uniplatform=NZKPT&language=CHS" target="_blank">一种基于直接双侧二维主成分分析的图像识别和图像重建方法</a></div>
                         <div class="patent-inventors">Haixian Wang, Jing Wang</div>
-                        <div class="patent-info">China: CN103955706B. 2017. (in Chinese)</div>
+                        <div class="patent-info">China: CN103955706B, 2017-03-22. (in Chinese)</div>
+                        <div class="patent-details">
+                            <div>Type: Granted invention patent</div>
+                            <div>Application No.: CN201410179380.X</div>
+                        </div>
+                        <div class="patent-dates">
+                            <span>Filed: <time datetime="2014-04-29">2014-04-29</time></span>
+                            <span>Granted: <time datetime="2017-03-22">2017-03-22</time></span>
+                        </div>
                         <a href="PDF/wang2014patent.pdf" class="resource-link-inline" target="_blank">PDF</a>
                     </div>
                 </section>
@@ -1607,7 +1664,7 @@
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </button>
-            <button class="drawer-nav-item" data-tab="publication">
+            <button class="drawer-nav-item" data-tab="publications">
                 <i class="fas fa-file-alt"></i>
                 <span>Publications</span>
             </button>
