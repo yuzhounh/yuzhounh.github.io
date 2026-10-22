@@ -1726,6 +1726,9 @@
             });
         }
 
+        var vibeIconsReady = false;
+        var vibeIconsStarted = false;
+
         function activate(tabName) {
             links.forEach(function(l) {
                 var selected = l.getAttribute('data-tab') === tabName;
@@ -1741,6 +1744,7 @@
             document.querySelectorAll('.tab-content').forEach(function(c) {
                 c.classList.toggle('active', c.id === 'tab-' + tabName);
             });
+            if (vibeIconsReady && tabName === 'vibes') loadVibeIconsOnce();
         }
 
         function openDrawer() {
@@ -1854,7 +1858,7 @@
         activateFromHash();
         window.addEventListener('hashchange', activateFromHash);
 
-        var VIBE_ICONS_VERSION = '20261007a';
+        var VIBE_ICONS_VERSION = '20261023a';
         var VIBE_EXTERNAL_ICONS = {
             'day-garden': 'assets/vibe-icons/day-garden.svg',
             'ai-quota-activation': 'assets/vibe-icons/ai-quota-activation.png',
@@ -1930,6 +1934,8 @@
             var iconWrap = item.querySelector('.vibe-icon');
             var img = item.querySelector('.vibe-icon-img');
             if (!iconWrap || !img) return;
+            if (item.hasAttribute('data-icon-requested')) return;
+            item.setAttribute('data-icon-requested', 'true');
 
             function loadFromGithub() {
                 var paths = (VIBE_ICON_PATHS[repo] || []).concat(GENERIC_ICON_PATHS);
@@ -1959,7 +1965,26 @@
             loadFromGithub();
         }
 
-        document.querySelectorAll('.vibe-item[data-repo]').forEach(loadVibeIcon);
+        function loadVibeIconsOnce() {
+            if (vibeIconsStarted) return;
+            vibeIconsStarted = true;
+            var items = document.querySelectorAll('.vibe-item[data-repo]');
+            if (!window.IntersectionObserver) {
+                items.forEach(loadVibeIcon);
+                return;
+            }
+            var observer = new IntersectionObserver(function(entries) {
+                if (!document.getElementById('tab-vibes').classList.contains('active')) return;
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    observer.unobserve(entry.target);
+                    loadVibeIcon(entry.target);
+                });
+            }, { rootMargin: '200px 0px' });
+            items.forEach(function(item) { observer.observe(item); });
+        }
+        vibeIconsReady = true;
+        if (document.getElementById('tab-vibes').classList.contains('active')) loadVibeIconsOnce();
     })();
     </script>
 </body>

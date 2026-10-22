@@ -30,6 +30,12 @@ node scripts/build-site.mjs
 
 This recreates `dist_pages/` from tracked `index.html`, `assets/`, and `PDF/` files, records source/file hashes, and excludes local configuration and maintenance scripts. Firebase already uses this directory and site `yuzhounh` in the existing `soft-trace` project. GitHub Pages continues serving the repository root.
 
+## Maintenance documentation
+
+Vibes icons load only after opening the tab and approaching the visible cards. Direct `#vibes` links, mobile navigation and existing icon fallbacks are retained; browsers without IntersectionObserver load icons on the first Vibes visit.
+
+- [Publication dates and presentation](docs/publication_dates.md): publication-date conventions, source checks, and page maintenance records.
+
 ## License
 
 Source code and the theme are licensed under MIT. Personal writing, biography, photographs, and other content have separate terms; see [LICENSE](LICENSE) for the exact split.
