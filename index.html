@@ -555,6 +555,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
             padding: 14px 18px;
             background: var(--color-item-bg);
             border: 1px solid var(--color-item-border);
@@ -565,6 +566,17 @@
         .student-card:hover {
             background: var(--color-item-hover);
             border-color: #dbeafe;
+        }
+
+        .student-details {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .student-email {
+            font-size: 0.85rem;
+            overflow-wrap: anywhere;
         }
 
         .student-name {
@@ -992,27 +1004,45 @@
                     <h2>Students</h2>
                     <div class="students-list">
                         <div class="student-card">
-                            <span class="student-name">Yunjie Jin</span>
+                            <div class="student-details">
+                                <span class="student-name">Yunjie Jin</span>
+                                <span class="student-email">jinyunjie@xynu.edu.cn</span>
+                            </div>
                             <span class="student-period">2026/09 - Present</span>
                         </div>
                         <div class="student-card">
-                            <span class="student-name">Kunpeng Xia</span>
+                            <div class="student-details">
+                                <span class="student-name">Kunpeng Xia</span>
+                                <span class="student-email">xiakunpeng@xynu.edu.cn</span>
+                            </div>
                             <span class="student-period">2025/09 - Present</span>
                         </div>
                         <div class="student-card">
-                            <span class="student-name">Yanfang Chen</span>
+                            <div class="student-details">
+                                <span class="student-name">Yanfang Chen</span>
+                                <span class="student-email">chenyanfang@xynu.edu.cn</span>
+                            </div>
                             <span class="student-period">2024/09 - Present</span>
                         </div>
                         <div class="student-card">
-                            <span class="student-name">Hang Hu</span>
+                            <div class="student-details">
+                                <span class="student-name">Hang Hu</span>
+                                <span class="student-email">huhang@xynu.edu.cn</span>
+                            </div>
                             <span class="student-period">2024/09 - Present</span>
                         </div>
                         <div class="student-card">
-                            <span class="student-name">Pengwei Wang</span>
+                            <div class="student-details">
+                                <span class="student-name">Pengwei Wang</span>
+                                <span class="student-email">wangpw@xynu.edu.cn</span>
+                            </div>
                             <span class="student-period">2023/09 - 2026/06</span>
                         </div>
                         <div class="student-card">
-                            <span class="student-name">Bao Zhang</span>
+                            <div class="student-details">
+                                <span class="student-name">Bao Zhang</span>
+                                <span class="student-email">1418988908@qq.com</span>
+                            </div>
                             <span class="student-period">2019/09 - 2022/06</span>
                         </div>
                     </div>
